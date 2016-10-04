@@ -10,9 +10,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\IService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Types.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\IntroPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IPushService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ChatRoomViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MakeRoomViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RoomListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RoomSettingViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Docs\README.md" />
     <None Include="$(MSBuildThisFileDirectory)GettingStarted.Xamarin" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\IntroPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
