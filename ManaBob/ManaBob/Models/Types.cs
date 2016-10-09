@@ -11,7 +11,7 @@ namespace ManaBob.Model
     enum Menu
     {
         Unknown,    // Default value
-        Korean,
+        Kor,
     }
 
     // - Note
@@ -92,7 +92,8 @@ namespace ManaBob.Model
     //      - Blob      : zip
     class Message
     {
-        public MCategory Category { get; set; }
+        public Int64        ID;
+        public MCategory    Category { get; set; }
     }
 
 
