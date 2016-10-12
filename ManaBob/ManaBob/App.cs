@@ -20,7 +20,7 @@ namespace ManaBob
                     Children = {
                         new Label {
                             HorizontalTextAlignment = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
+                            Text = "연귭니다"
                         }
                     }
                 }
