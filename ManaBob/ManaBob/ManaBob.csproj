@@ -37,8 +37,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Models\Types.cs" />
+    <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\Format.cs" />
+    <Compile Include="Models\Message.cs" />
+    <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\Spot.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Pages\IntroPage.xaml.cs">
+      <DependentUpon>IntroPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\FakeLocalService.cs" />
+    <Compile Include="Services\ILocalService.cs" />
+    <Compile Include="Services\INetService.cs" />
     <Compile Include="Services\IPushService.cs" />
     <Compile Include="Services\IService.cs" />
     <Compile Include="ViewModels\ChatRoomViewModel.cs" />
@@ -70,7 +81,12 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\IntroPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

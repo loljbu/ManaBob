@@ -5,6 +5,8 @@ using System.Text;
 
 using Xamarin.Forms;
 
+using ManaBob.ViewModel;
+
 namespace ManaBob
 {
     public class App : Application
@@ -12,19 +14,7 @@ namespace ManaBob
         public App()
         {
             // The root page of your application
-            MainPage = new ContentPage
-            {
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
-                            HorizontalTextAlignment = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
-                        }
-                    }
-                }
-            };
+            MainPage = new Pages.IntroPage();
         }
 
         protected override void OnStart()
@@ -42,4 +32,5 @@ namespace ManaBob
             // Handle when your app resumes
         }
     }
-}
+
+}// namespace ManaBob
