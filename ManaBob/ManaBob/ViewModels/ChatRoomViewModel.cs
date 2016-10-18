@@ -4,11 +4,11 @@ using System.Text;
 
 namespace ManaBob.ViewModel
 {
-    class ChatRoomViewModel
+    public class ChatRoomViewModel
     {
         // - Note
         //      메세지 전송
-        public void Send(Model.Message _msg)
+        public void Send(Message _msg)
         {
             throw new NotImplementedException();
         }
@@ -28,4 +28,5 @@ namespace ManaBob.ViewModel
         }
 
     }
-}
+
+}// namespace ManaBob.ViewModel

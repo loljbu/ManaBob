@@ -9,13 +9,24 @@ using ManaBob.ViewModel;
 
 namespace ManaBob
 {
-    public class App : Application
+    public class AppCore : Application
     {
-        public App()
+        // Net/Local services
+        IService svc;
+
+        public AppCore()
         {
             // The root page of your application
             MainPage = new Pages.IntroPage();
         }
+
+        // - Note
+        //      Exit the Core. Release all resources
+        public void exit()
+        {
+            // ...
+        }
+
 
         protected override void OnStart()
         {
