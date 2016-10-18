@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ManaBob.ViewModel
 {
-    class MakeRoomViewModel
+    public class MakeRoomViewModel
     {
 
         // - Note
@@ -14,4 +14,5 @@ namespace ManaBob.ViewModel
             throw new NotImplementedException();
         }
     }
-}
+
+}// namespace ManaBob.ViewModel
