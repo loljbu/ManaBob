@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="LoginPageTitle" 
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ManaBob.Pages.LoginPage">
+  <ContentPage.Content>
+    <StackLayout Orientation="Vertical">
+      
+      <Label Text="LoginPage" 
+             VerticalOptions="Center" HorizontalOptions="Center" />  
+      
+      <Entry x:Name="EntryID"  IsVisible="False"></Entry>
+      <Entry x:Name="EntryPWD" IsVisible="False"></Entry>
+      
+      <Button Text="WebPage" 
+              Clicked="GoToWebPage"></Button>
+      <Button Text="RoomListPage" 
+              Clicked="GoToListPage"></Button>
+      <Button Text="Back" 
+              Clicked="GoToBack"></Button>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

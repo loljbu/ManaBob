@@ -11,10 +11,14 @@ namespace ManaBob
 {
     public class App : Application
     {
+        ContentPage _intro  = new Pages.IntroPage();
+        ContentPage _login  = new Pages.LoginPage();
+        ContentPage _web    = new Pages.WebPage();
+
         public App()
         {
             // The root page of your application
-            MainPage = new Pages.IntroPage();
+            MainPage = new NavigationPage(_intro);
         }
 
         protected override void OnStart()
