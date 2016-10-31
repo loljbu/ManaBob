@@ -19,7 +19,7 @@ namespace ManaBob
         //      메세지 종류. 일부 확장자를 지원하는 것을 고려
         // - To Do
         //      우선 구현 : Text
-        public enum Cat
+        public enum Category
         {
             Binary,
             Text,
@@ -30,19 +30,19 @@ namespace ManaBob
         }
 
 
-        public Int64 ID;
-        public Cat Category { get; set; }
+        public Int64    ID;
+        public Category Type { get; set; }
 
         public Message()
         {
             this.ID = 0;
-            this.Category = Cat.Binary;
+            this.Type = Category.Binary;
         }
 
-        public Message(Int64 _id, Cat _cat)
+        public Message(Int64 _id, Category _type)
         {
             this.ID = _id;
-            this.Category = _cat;
+            this.Type = _type;
         }
 
     }

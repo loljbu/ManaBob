@@ -8,23 +8,18 @@ using Xamarin.Forms;
 
 namespace ManaBob.Pages
 {
-    public partial class IntroPage : ContentPage
+    public partial class WebPage : ContentPage
     {
         AppCore core;
-
-        public IntroPage(AppCore _core)
+        public WebPage(AppCore _core)
         {
             core = _core;
             InitializeComponent();
         }
 
-        protected void GoToLoginPage(object sender, EventArgs e)
+        public void Display(UrlWebViewSource _source)
         {
-            var next = core.Repo.Resolve<LoginPage>();
-            if(next == null) { return; }
-
-            core.NavigateTo(next);
+            this.webView.Source = _source;
         }
-
     }
 }

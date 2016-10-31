@@ -7,20 +7,23 @@ using System.IO;
 
 namespace ManaBob.Services
 {
-    // - Note
-    //      Local System API에 대한 Wrapper 인터페이스.
-    //      Service는 자원에 대한 관리만을 담당하며,
-    //      CRUD를 동작을 위해 필요한 Stream들의 소유권을 가진다.
-    //       - Create : 특정 file에 대한 Stream을 획득한다.
-    //       - Read   : Read는 Stream Reader에게 위임
-    //       - Update : Write는 Stream Writer에게 위임
-    //       - Delete : 특정 file을 지운다.
-    // - Exception
-    //      문제가 발생할 수 있는 경우 예외를 사용한다.
-    //      즉, 반환 Value/Object를 획득할 수 없으면 예외를 던진다
-    // - Caution
-    //      소멸 시점에 소유한 모든 File들을 해제해야 한다.
-    public interface ILocalService
+
+    /// <summary>
+    ///     Local System API에 대한 Wrapper 인터페이스.
+    ///     Service는 자원에 대한 관리만을 담당하며,
+    ///     CRUD를 동작을 위해 필요한 Stream들의 소유권을 가진다.
+    ///      - Create : 특정 file에 대한 Stream을 획득한다.
+    ///      - Read   : Read는 Stream Reader에게 위임
+    ///      - Update : Write는 Stream Writer에게 위임
+    ///      - Delete : 특정 file을 지운다.
+    /// </summary>
+    /// <exception cref="">
+    ///     반환 Value/Object를 획득할 수 없으면 예외를 던진다
+    /// </exception>
+    /// <remarks>
+    ///     소멸 시점에 소유한 모든 File들을 해제해야 한다.
+    /// </remarks>
+    public interface ILocalService : IDisposable
     {
         // - Note
         //      `StreamWriter`, `StreamReader`에서 사용할 수 있는 

@@ -8,42 +8,48 @@ using System.Net;
 namespace ManaBob.Services
 {
 
-    // - Note
-    //      Network service에 대한 Dependency를 최소화 하기 위한 
-    //       Wrapper 인터페이스.
-    //      가장 기본적인 수준의 동기/비동기 송수신 기능을 사용
-    // - Exception
-    //      심각한 경우에만 예외를 사용하며, 
-    //      기본적으로는 반환값을 사용에 Error Code를 전파
-    interface INetService
+    /// <summary>
+    ///     기본적인 수준의 동기/비동기 송수신 기능을 사용
+    /// </summary>
+    public interface INetService : IDisposable
     {
-        // - Note
-        //      Server's endpoint. Possibly read-only
-        // - Return
-        //      TcpClient??
-        int Remote { get; }
 
-        // - Note
-        //      서버와의 연결이 끊긴 경우 복원한다.
-        //      예외를 던지지 않는다.
-        // - Return
-        //      연결 회복의 성공여부
+        /// <summary>
+        ///     서버와 연결이 끊긴 경우 복원한다.
+        /// </summary>
+        /// <returns>
+        ///     연결 회복의 성공여부
+        /// </returns>
         bool Recover();
 
-        // - Note
-        //      Send 'all' bytes asynchronously
-        Task<bool> SendAsync(Byte[] _buffer);
+        /// <summary>
+        ///     동기적 전송
+        /// </summary>
+        int Send(Byte[] _buffer, int _offset, int _length);
 
-        // - Note
-        //      Receive 'some' bytes asynchronously
-        Task<bool> RecvAsync(out Byte[] _buffer);
+        /// <summary>
+        ///     동기적 수신
+        /// </summary>
+        int Receive(Byte[] _buffer, int _offset, int _length);
 
-        // - Note
-        //      Gracefully close connection with server
+        /// <summary>
+        ///     비동기 전송
+        /// </summary>
+        Task<int> SendAsync(Byte[] _buffer, int _offset, int _length);
+
+        /// <summary>
+        ///     비동기 수신
+        /// </summary>
+        Task<int> ReceiveAsync(Byte[] _buffer, int _offset, int _length);
+
+        /// <summary>
+        ///     명시적 Close 명령
+        /// </summary>
         void Close();
 
-        // - Note
-        //      Check the network service status
+        /// <summary>
+        ///     연결 상태를 확인
+        /// </summary>
         bool IsConnected { get; }
 
     }

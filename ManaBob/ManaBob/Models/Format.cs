@@ -9,12 +9,12 @@ using Newtonsoft.Json;
 namespace ManaBob
 {
 
-    // - Note
-    //      Object serialization/deserialization 
-    // - Dependency
-    //      `Newtonsoft.Json`
-    // - Task
-    //      Async operation support?
+    /// <summary>
+    ///     Object serialization/deserialization with JSON
+    /// </summary>
+    /// <remarks>
+    ///     `Newtonsoft.Json`
+    /// </remarks>
     public class Format
     {
         public Format()
