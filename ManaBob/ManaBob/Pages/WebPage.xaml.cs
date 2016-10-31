@@ -10,30 +10,16 @@ namespace ManaBob.Pages
 {
     public partial class WebPage : ContentPage
     {
-        WebView _web = new WebView();
-
-        public WebPage()
+        AppCore core;
+        public WebPage(AppCore _core)
         {
-            _web.VerticalOptions = LayoutOptions.FillAndExpand;
-            var cont = new StackLayout();
-            cont.Children.Add(_web);
-
-            this.Content = cont;
-
+            core = _core;
             InitializeComponent();
-
-
-            var web_source = new UrlWebViewSource
-            {
-                Url = "http://www.fb.com"
-            };
-            this.WebDisplay(web_source);
-
         }
 
-        public void WebDisplay(UrlWebViewSource _source)
+        public void Display(UrlWebViewSource _source)
         {
-            _web.Source = _source;
+            this.webView.Source = _source;
         }
     }
 }

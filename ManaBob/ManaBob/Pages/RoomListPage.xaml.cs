@@ -15,8 +15,10 @@ namespace ManaBob.Pages
     /// <seealso cref="https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/"/>
     public partial class RoomListPage : TabbedPage
     {
-        public RoomListPage()
+        AppCore core;
+        public RoomListPage(AppCore _core)
         {
+            core = _core;
             InitializeComponent();
 
             this.ItemsSource = new NamedColor[] {

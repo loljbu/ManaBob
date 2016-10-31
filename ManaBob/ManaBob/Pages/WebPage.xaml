@@ -3,10 +3,13 @@
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ManaBob.Pages.WebPage">
-  <!--
   <ContentPage.Content>
-    <WebView Source="https://www.fb.com/"></WebView>
+    <StackLayout>
+      <WebView x:Name="webView"
+               Source="https://www.fb.com/"
+               VerticalOptions="FillAndExpand"></WebView>
+
+    </StackLayout>
   </ContentPage.Content>
-  -->
 
 </ContentPage>

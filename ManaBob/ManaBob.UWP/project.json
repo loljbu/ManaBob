@@ -1,5 +1,6 @@
 ﻿{
   "dependencies": {
+    "Facebook": "7.0.6",
     "Microsoft.CSharp": "4.0.1",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
     "Newtonsoft.Json": "9.0.1",

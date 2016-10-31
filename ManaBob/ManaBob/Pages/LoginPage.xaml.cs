@@ -10,9 +10,10 @@ namespace ManaBob.Pages
 {
     public partial class LoginPage : ContentPage
     {
-        public LoginPage()
+        AppCore core;
+        public LoginPage(AppCore _core)
         {
-
+            core = _core;
             InitializeComponent();
 
             EntryID.Placeholder = "ID";
@@ -25,17 +26,27 @@ namespace ManaBob.Pages
 
         public async void GoToListPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RoomListPage());
+            var repo = core.Repo;
+            var next = repo.Resolve<RoomListPage>();
+            if (next == null) { return; }
+
+            core.NavigateTo(next);
+            await Navigation.PushAsync(new RoomListPage(core));
         }
 
         public async void GoToWebPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new WebPage());
+            var repo = core.Repo;
+            var next = repo.Resolve<RoomListPage>();
+            if (next == null) { return; }
+
+            core.NavigateTo(next);
+            await Navigation.PushAsync(new RoomListPage(core));
         }
 
-        public async void GoToBack(object sender, EventArgs e)
+        public void GoToBack(object sender, EventArgs e)
         {
-            await Navigation.PopAsync();
+            core.Pop();
         }
 
     }

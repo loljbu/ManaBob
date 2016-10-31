@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ManaBob
 {
-    class Repository
+
+    public class Repository
     {
         Dictionary<int, Object> dict = null;
 

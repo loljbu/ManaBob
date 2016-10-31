@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ManaBob.Services
 {
-    public sealed class FakeLocalService : ILocalService
+    public sealed class FakeLocal : ILocalService
     {
         Dictionary<String, Stream> dict;
 
-        public FakeLocalService()
+        public FakeLocal()
         {
             dict = new Dictionary<string, Stream>();
         }
@@ -36,7 +36,12 @@ namespace ManaBob.Services
         //      목록에서만 지운다.
         void ILocalService.Delete(string _fname)
         {
-            dict.Remove(_fname);
+            var stream = dict[_fname];
+            if(stream != null)
+            {
+                stream.Dispose();
+                dict.Remove(_fname);
+            }
         }
 
         // - Note
@@ -49,7 +54,17 @@ namespace ManaBob.Services
             }
         }
 
+        void IDisposable.Dispose()
+        {
+            foreach(var item in dict)
+            {
+                if(item.Value != null)
+                {
+                    item.Value.Dispose();
+                }
+            }
+        }
+
     }
 
-}// namespace ManaBob.Services
-
+}   
