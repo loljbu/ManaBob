@@ -12,27 +12,29 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Xamarin.Forms;
+
+// 빈 페이지 항목 템플릿에 대한 설명은 http://go.microsoft.com/fwlink/?LinkId=234238에 나와 있습니다.
 
 namespace ManaBob.UWP
 {
-    public sealed partial class MainPage
+    /// <summary>
+    /// 자체적으로 사용하거나 프레임 내에서 탐색할 수 있는 빈 페이지입니다.
+    /// </summary>
+    public sealed partial class RoomView : Page
     {
-
-        public MainPage()
+        public RoomView()
         {
             this.InitializeComponent();
-            //LoadApplication(new ManaBob.App());
         }
 
-        void button_Click(object sender, RoutedEventArgs e)
+        private void create_Click(object sender, RoutedEventArgs e)
         {
             if (this.Frame.CanGoBack)
             {
                 this.Frame.GoBack();
             }
 
-            this.Frame.Navigate(typeof(RoomView));
+            this.Frame.Navigate(typeof(CreateRoom));
         }
     }
 }

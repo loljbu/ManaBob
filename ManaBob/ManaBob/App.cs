@@ -20,7 +20,7 @@ namespace ManaBob
                     Children = {
                         new Label {
                             HorizontalTextAlignment = TextAlignment.Center,
-                            Text = "연귭니다"
+                            Text = "넵"
                         }
                     }
                 }
