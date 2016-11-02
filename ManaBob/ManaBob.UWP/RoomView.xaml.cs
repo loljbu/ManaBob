@@ -35,6 +35,10 @@ namespace ManaBob.UWP
             }
 
             this.Frame.Navigate(typeof(CreateRoom));
+            // 방 정보 개설을 위한 이벤트 처리
+
         }
+
+
     }
 }

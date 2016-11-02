@@ -25,6 +25,8 @@ namespace ManaBob.UWP
         public Room_User()
         {
             this.InitializeComponent();
+
+
         }
 
         private void report_Click(object sender, RoutedEventArgs e)

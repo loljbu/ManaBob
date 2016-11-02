@@ -34,7 +34,8 @@ namespace ManaBob.UWP
                 this.Frame.GoBack();
             }
 
-            this.Frame.Navigate(typeof(RoomView));
+            this.Frame.Navigate(typeof(Room_creator));
+            // 방이 개설되면 방장의 입장에서 보이는 방페이지로 이동
         }
 
         private void cancle_Click(object sender, RoutedEventArgs e)
@@ -43,9 +44,10 @@ namespace ManaBob.UWP
             {
                 this.Frame.GoBack();
             }
-            //this.DisplayAlert("Event Handler", "Save button clicked", "OK");
-            this.Frame.Navigate(typeof(Room_creator));
-        }
+            this.Frame.Navigate(typeof(RoomView));
+            // 방생성중에 취소하기 버튼을 누르면
+            // 방들의 list가 보이는 페이지로 이동
 
+        }
     }
 }
