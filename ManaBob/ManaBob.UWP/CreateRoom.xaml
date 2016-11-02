@@ -8,10 +8,21 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ComboBox x:Name="combo_category" HorizontalAlignment="Left" Margin="48,220,0,0" VerticalAlignment="Top" Width="242"/>
-        <ComboBox x:Name="combo_number" HorizontalAlignment="Left" Margin="48,380,0,0" VerticalAlignment="Top" Width="242"/>
+        <ComboBox x:Name="combo_category" SelectedValue ="{Binding SelectedDirection, Mode=TwoWay}" HorizontalAlignment="Left" Margin="48,220,0,0" VerticalAlignment="Top" Width="242" SelectedValuePath="Tag">
+            <ComboBoxItem Content="한식" Tag="0"/>
+            <ComboBoxItem Content="중식" Tag="1"/>
+            <ComboBoxItem Content="일식" Tag="2"/>
+            <ComboBoxItem Content="양식" Tag="3"/>
+            <ComboBoxItem Content="학식" Tag="4"/>
+        </ComboBox>
+        <ComboBox x:Name="combo_number" SelectedValue ="{Binding SelectedDirection, Mode=TwoWay}" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="48,380,0,0" VerticalAlignment="Top" Width="242">
+            <ComboBoxItem Content="2명" Tag="5"/>
+            <ComboBoxItem Content="3명" Tag="6"/>
+            <ComboBoxItem Content="4명" Tag="7"/>
+            <ComboBoxItem Content="기타" Tag="8"/>
+        </ComboBox>
         <TextBox x:Name="cost" HorizontalAlignment="Left" Height="30" Margin="48,460,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="242"/>
-        <ComboBox x:Name="combo_time" HorizontalAlignment="Left" Margin="48,300,0,0" VerticalAlignment="Top" Width="242"/>
+        <TextBox x:Name="MeetTime" HorizontalAlignment="Left" Height="30" Margin="48,300,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="242"/>
         <TextBlock x:Name="critical" Text="*는 필수항목" Foreground="Red" HorizontalAlignment="Left" Margin="48,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="category" Text="* 카테고리선택" Foreground="Black" HorizontalAlignment="Left" Margin="48,190,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="joinNumber" Text="* 인원선택" Foreground="Black" HorizontalAlignment="Left" Margin="48,350,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>

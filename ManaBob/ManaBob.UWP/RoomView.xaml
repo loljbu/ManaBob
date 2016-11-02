@@ -9,10 +9,29 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button x:Name="create" Content="방 만들기" HorizontalAlignment="Left" Height="40" Margin="230,43,0,0" VerticalAlignment="Top" Width="90" Click="create_Click"/>
-        <ComboBox x:Name="combo_category" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Width="100"/>
-        <ComboBox x:Name="combo_time" HorizontalAlignment="Left" Margin="130,150,0,0" VerticalAlignment="Top" Width="100"/>
-        <ComboBox x:Name="combo_number" HorizontalAlignment="Left" Margin="250,150,0,0" VerticalAlignment="Top" Width="100"/>
+        <ComboBox x:Name="combo_category" SelectedValue ="{Binding SelectedDirection, Mode=TwoWay}" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Width="100">
+            <ComboBoxItem Content="한식" Tag="9"/>
+            <ComboBoxItem Content="중식" Tag="10"/>
+            <ComboBoxItem Content="일식" Tag="11"/>
+            <ComboBoxItem Content="양식" Tag="12"/>
+            <ComboBoxItem Content="학식" Tag="13"/>
+        </ComboBox>
+        <TextBox x:Name="cost" HorizontalAlignment="Left" Height="30" Margin="130,150,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="100"/>
+        <ComboBox x:Name="combo_number" HorizontalAlignment="Left" Margin="250,150,0,0" VerticalAlignment="Top" Width="100">
+            <ComboBoxItem Content="2명" Tag="14"/>
+            <ComboBoxItem Content="3명" Tag="15"/>
+            <ComboBoxItem Content="4명" Tag="16"/>
+            <ComboBoxItem Content="기타" Tag="17"/>
+        </ComboBox>
         <Image x:Name="image" HorizontalAlignment="Left" Height="60" Margin="10,35,0,0" VerticalAlignment="Top" Width="60" Source="Assets/dish.png"/>
         <TextBlock x:Name="Title" Text="만나밥" HorizontalAlignment="Left" FontSize="40" Height="60" Margin="80,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <TextBlock x:Name="timeCh" HorizontalAlignment="Left" Margin="130,125,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100" Text="   시간선택"/>
+        <TextBlock x:Name="CategoryCh"  HorizontalAlignment="Left" Margin="10,125,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100">
+            <Run Text="   "/>
+            <Run Text="메뉴선택"/>
+        </TextBlock>
+        <TextBlock x:Name="JoinNumberCh"  HorizontalAlignment="Left" Margin="250,125,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100" Text="   인원선택"/>
+
+
     </Grid>
 </Page>
