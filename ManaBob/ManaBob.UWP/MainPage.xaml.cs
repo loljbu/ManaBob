@@ -25,7 +25,7 @@ namespace ManaBob.UWP
             //LoadApplication(new ManaBob.App());
         }
 
-        void button_Click(object sender, RoutedEventArgs e)
+        private void login_Click(object sender, RoutedEventArgs e)
         {
             if (this.Frame.CanGoBack)
             {
@@ -33,6 +33,11 @@ namespace ManaBob.UWP
             }
 
             this.Frame.Navigate(typeof(RoomView));
+        }
+
+        private void confirm_Click(object sender, RoutedEventArgs e)
+        {
+            // 인증하기 위해 페북 사이트로 이동
         }
     }
 }
