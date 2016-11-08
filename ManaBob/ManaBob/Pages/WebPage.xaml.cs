@@ -10,10 +10,13 @@ namespace ManaBob.Pages
 {
     public partial class WebPage : ContentPage
     {
-        AppCore core;
-        public WebPage(AppCore _core)
+        Navigator   navi;
+        Repository  pages;
+
+        public WebPage(Navigator _navi, Repository _pages)
         {
-            core = _core;
+            navi = _navi;
+            pages = _pages;
             InitializeComponent();
         }
 
@@ -21,5 +24,6 @@ namespace ManaBob.Pages
         {
             this.webView.Source = _source;
         }
+
     }
 }

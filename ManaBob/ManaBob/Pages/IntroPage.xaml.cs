@@ -10,20 +10,22 @@ namespace ManaBob.Pages
 {
     public partial class IntroPage : ContentPage
     {
-        AppCore core;
+        Navigator   navi;
+        Repository  pages;
 
-        public IntroPage(AppCore _core)
+        public IntroPage(Navigator _navi, Repository _pages)
         {
-            core = _core;
+            navi = _navi;
+            pages = _pages;
             InitializeComponent();
         }
 
         protected void GoToLoginPage(object sender, EventArgs e)
         {
-            var next = core.Repo.Resolve<LoginPage>();
+            var next = pages.Resolve<LoginPage>();
             if(next == null) { return; }
 
-            core.NavigateTo(next);
+            navi.GoAsyncTo(new NavigationPage(next));
         }
 
     }

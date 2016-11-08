@@ -14,64 +14,56 @@ namespace ManaBob
     public class AppCore : 
             Xamarin.Forms.Application
     {
-        Repository repo = new Repository();
+        Repository svc   = new Repository();
+        Repository pages = new Repository();
+
+        Navigator navi;
 
         public AppCore()
         {
             // Net/Local services
-            repo.Register<IAuthService>(new FakeAuth());
-            repo.Register<INetService>(new FakeNet());
-            repo.Register<ILocalService>(new FakeLocal());
+            // ---- ---- ---- ---- ----
 
-            // Pages
-            repo.Register<IntroPage>(new IntroPage(this));
-            repo.Register<LoginPage>(new LoginPage(this));
-            repo.Register<RoomListPage>(new RoomListPage(this));
-            repo.Register<WebPage>(new WebPage(this));
+            svc.Register<IAuthService>(new FakeAuth());
+            svc.Register<INetService>(new FakeNet());
+            svc.Register<ILocalService>(new FakeLocal());
 
 
-            // The root page of your application
-            var main = repo.Resolve<IntroPage>();
-            this.NavigateTo(main);
+            // Pages / Navigation
+            // ---- ---- ---- ---- ----
+
+            navi = new Navigator(this);
+
+            var intro = new IntroPage(navi, pages);
+            var login = new LoginPage(navi, pages);
+            var rlist = new RoomListPage(navi, pages);
+            var webvw = new WebPage(navi, pages);
+
+            pages.Register<IntroPage>(intro);
+            pages.Register<LoginPage>(login);
+            pages.Register<RoomListPage>(rlist);
+            pages.Register<WebPage>(webvw);
+
+            this.MainPage = new NavigationPage(intro);
         }
-
-        public Repository Repo
-        {
-            get{ return repo; }
-        }
-
-        public void NavigateTo(Page _next)
-        {
-            if(_next == null) { return; }
-            this.MainPage = new NavigationPage(_next);
-        }
-
-        public async void PushTo(Page _next)
-        {
-            if (_next == null) { return; }
-            var navPage = new NavigationPage(_next);
-            await this.MainPage.Navigation.PushAsync(navPage);
-        }
-
-        public async void Pop()
-        {
-            await this.MainPage.Navigation.PopAsync();
-        }
-
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            // The root page of your application
+            var page = pages.Resolve<IntroPage>();
+            if(page == null) { return; }
+            var next = new NavigationPage(page);
+            navi.GoAsyncTo(next);
         }
 
         protected override void OnSleep()
         {
-            // Handle when your app sleeps
+            //this.MainPage.DisplayAlert("OnSleep", "sleeping", "accept", "cancel");
         }
 
         protected override void OnResume()
         {
-            // Handle when your app resumes
+            this.MainPage.DisplayAlert("OnResume", "resumed", "accept", "cancel");
         }
     }
 

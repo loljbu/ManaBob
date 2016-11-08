@@ -7,12 +7,9 @@ using System.Threading.Tasks;
 namespace ManaBob
 {
 
-    // - Note
-    //      Serialization/Deserialization이 가능한 메세지
-    // - Extension
-    //      - Text      : text
-    //      - Binary    : image
-    //      - Blob      : zip
+    /// <summary>
+    ///     Serialization/Deserialization이 가능한 메세지
+    /// </summary>
     public class Message
     {
         // - Note
@@ -35,8 +32,8 @@ namespace ManaBob
 
         public Message()
         {
-            this.ID = 0;
-            this.Type = Category.Binary;
+            this.ID     = -1;
+            this.Type   = Category.Binary;
         }
 
         public Message(Int64 _id, Category _type)
