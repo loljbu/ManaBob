@@ -7,16 +7,18 @@ using System.Threading.Tasks;
 namespace ManaBob
 {
 
-    // - Note
-    //      '채팅방'의 기본 클래스
-    //      - ID        : 방들의 고유 식별자
-    //      - Menu      : 먹을거리
-    //      - Budget    : 1인당 식비 예산
-    //      - Capacity  : 최대 인원수
-    //      - Count     : 현재 인원수
-    // - To Do
-    //      ID의 충돌 방지 방안?
-    //      최대 인원수는 필수적인가?
+    /// <summary>
+    ///      '채팅방'의 기본 클래스
+    ///      - ID        : 방들의 고유 식별자
+    ///      - Menu      : 먹을거리
+    ///      - Budget    : 1인당 식비 예산
+    ///      - Capacity  : 최대 인원수
+    ///      - Count     : 현재 인원수
+    /// </summary>
+    /// <remarks>
+    ///      ID의 충돌 방지 방안?
+    ///      최대 인원수는 필수적인가?
+    /// </remarks>
     public class Room
     {
         public UInt32   ID        { get; set; }

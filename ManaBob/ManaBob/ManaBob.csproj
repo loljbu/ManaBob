@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AppCore.cs" />
+    <Compile Include="Models\Bindable.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\Format.cs" />
     <Compile Include="Models\Message.cs" />
@@ -44,6 +45,7 @@
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\Spot.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Navigator.cs" />
     <Compile Include="Pages\IntroPage.xaml.cs">
       <DependentUpon>IntroPage.xaml</DependentUpon>
     </Compile>

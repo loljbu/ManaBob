@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;    // for INotifyPropertyChanged
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,51 +16,98 @@ namespace ManaBob.Pages
     /// <seealso cref="https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/"/>
     public partial class RoomListPage : TabbedPage
     {
-        AppCore core;
-        public RoomListPage(AppCore _core)
+        Navigator   navi;
+        Repository  pages;
+
+        public RoomListPage(Navigator _navi, Repository _pages)
         {
-            core = _core;
+            navi = _navi;
+            pages = _pages;
             InitializeComponent();
 
-            this.ItemsSource = new NamedColor[] {
-                new NamedColor ("Red", Color.Red),
-                new NamedColor ("Yellow", Color.Yellow),
-                new NamedColor ("Green", Color.Green),
-                new NamedColor ("Aqua", Color.Aqua),
-                new NamedColor ("Blue", Color.Blue),
-                new NamedColor ("Purple", Color.Purple)
+            Menu[] menus = new Menu[]
+            {
+                new Menu("Red", Color.Red),
+                new Menu("Green", Color.Green),
+                new Menu("Blue", Color.Blue),
             };
+            this.ItemsSource = menus;
 
             this.ItemTemplate = new DataTemplate(() => {
-                return new NamedColorPage();
+                return new ColorPage();
             });
 
         }
     }
 
-    // Data type:
-    class NamedColor
+    class Menu : INotifyPropertyChanged
     {
-        public NamedColor(string name, Color color)
+        public event PropertyChangedEventHandler PropertyChanged;
+        private String  name;
+        private Color   content;
+
+        public Menu(String _name, Color _content)
         {
-            this.Name = name;
-            this.Color = color;
+            this.name = _name;
+            this.content = _content;
         }
 
-        public string Name { private set; get; }
+        void OnPropertyChanged(String _property_name = null)
+        {
+            var handler = PropertyChanged;
+            if(handler == null)
+            {
+                return;
+            }
+            handler(this, new PropertyChangedEventArgs(_property_name));
+        }
 
-        public Color Color { private set; get; }
+        public String Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                if(value.Equals(this.name) == true)
+                {
+                    return;
+                }
+                name = value;
+                OnPropertyChanged("Name");
+            }
+        }
+
+        public Color Content
+        {
+            get
+            {
+                return this.content;
+            }
+            set
+            {
+                if(value.Equals(this.content) == true)
+                {
+                    return;
+                }
+                content = value;
+                OnPropertyChanged("Content");
+            }
+        }
+
 
         public override string ToString()
         {
-            return Name;
+            return this.Name;
         }
     }
+    
 
     // Format page
-    class NamedColorPage : ContentPage
+    class ColorPage : ContentPage
     {
-        public NamedColorPage()
+        public ColorPage()
         {
             // This binding is necessary to label the tabs in
             // the TabbedPage.
@@ -71,7 +119,7 @@ namespace ManaBob.Pages
                 HeightRequest = 100,
                 HorizontalOptions = LayoutOptions.Center
             };
-            boxView.SetBinding(BoxView.ColorProperty, "Color");
+            boxView.SetBinding(BoxView.ColorProperty, "Content");
 
             // Build the page
             this.Content = boxView;

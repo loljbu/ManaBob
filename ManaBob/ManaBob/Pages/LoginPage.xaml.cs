@@ -10,43 +10,46 @@ namespace ManaBob.Pages
 {
     public partial class LoginPage : ContentPage
     {
-        AppCore core;
-        public LoginPage(AppCore _core)
+        Navigator navi;
+        Repository pages;
+
+        public LoginPage(Navigator _navi, Repository _page)
         {
-            core = _core;
+            navi = _navi;
+            pages = _page;
             InitializeComponent();
-
-            EntryID.Placeholder = "ID";
-            EntryID.IsVisible = true;
-            EntryPWD.Placeholder = "Password";
-            EntryPWD.IsVisible = true;
-
+            
         }
 
-
-        public async void GoToListPage(object sender, EventArgs e)
+        public async Task<bool> Alert(string _title, 
+                                      string _message, 
+                                      string _true, string _false)
         {
-            var repo = core.Repo;
-            var next = repo.Resolve<RoomListPage>();
-            if (next == null) { return; }
-
-            core.NavigateTo(next);
-            await Navigation.PushAsync(new RoomListPage(core));
+            bool choice = await DisplayAlert(_title, _message, _true, _false);
+            return choice;
         }
 
-        public async void GoToWebPage(object sender, EventArgs e)
+        public void GoToListPage(object sender, EventArgs e)
         {
-            var repo = core.Repo;
-            var next = repo.Resolve<RoomListPage>();
-            if (next == null) { return; }
+            var page = pages.Resolve<RoomListPage>();
+            if (page == null) { return; }
 
-            core.NavigateTo(next);
-            await Navigation.PushAsync(new RoomListPage(core));
+            var next = new NavigationPage(page);
+            navi.PushAsyncTo(next);
+        }
+
+        public void GoToWebPage(object sender, EventArgs e)
+        {
+            var page = pages.Resolve<WebPage>();
+            if (page == null) { return; }
+
+            var next = new NavigationPage(page);
+            navi.PushAsyncTo(next);
         }
 
         public void GoToBack(object sender, EventArgs e)
         {
-            core.Pop();
+            navi.PopAsync();
         }
 
     }
