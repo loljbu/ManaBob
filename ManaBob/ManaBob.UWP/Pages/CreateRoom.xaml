@@ -28,8 +28,8 @@
         <TextBlock x:Name="joinNumber" Text="* 인원선택" Foreground="Black" HorizontalAlignment="Left" Margin="48,350,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="time" Text="* 시간선택" Foreground="Black" HorizontalAlignment="Left" Margin="48,270,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="insert_cost" Text="예상비용" Foreground="Black" HorizontalAlignment="Left" Margin="48,430,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="create" Content="만들기" HorizontalAlignment="Left" Height="40" Margin="68,540,0,0" VerticalAlignment="Top" Width="90" Click="create_Click"/>
-        <Button x:Name="cancle" Content="취소" HorizontalAlignment="Left" Height="40" Margin="185,540,0,0" VerticalAlignment="Top" Width="90" Click="cancle_Click"/>
+        <Button x:Name="create" Content="만들기" HorizontalAlignment="Left" Height="40" Margin="68,540,0,0" VerticalAlignment="Top" Width="90" />
+        <Button x:Name="cancle" Content="취소" HorizontalAlignment="Left" Height="40" Margin="185,540,0,0" VerticalAlignment="Top" Width="90" />
         <Image x:Name="image" HorizontalAlignment="Left" Height="60" Margin="55,35,0,0" VerticalAlignment="Top" Width="60" Source="Assets/dish.png"/>
         <TextBlock x:Name="Title" Text="만나밥" HorizontalAlignment="Left" FontSize="40" Height="60" Margin="120,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
