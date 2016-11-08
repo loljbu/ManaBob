@@ -103,15 +103,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoomView.xaml.cs">
-      <DependentUpon>RoomView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Room_creator.xaml.cs">
-      <DependentUpon>Room_creator.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Room_User.xaml.cs">
-      <DependentUpon>Room_User.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Services\FacebookAuth.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
