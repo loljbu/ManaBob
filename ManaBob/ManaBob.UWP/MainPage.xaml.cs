@@ -22,7 +22,7 @@ namespace ManaBob.UWP
         public MainPage()
         {
             this.InitializeComponent();
-            //LoadApplication(new ManaBob.App());
+            LoadApplication(new ManaBob.AppCore());
         }
 
         private void login_Click(object sender, RoutedEventArgs e)
@@ -32,7 +32,7 @@ namespace ManaBob.UWP
                 this.Frame.GoBack();
             }
 
-            this.Frame.Navigate(typeof(RoomView));
+            //this.Frame.Navigate(typeof(RoomView));
         }
 
         private void confirm_Click(object sender, RoutedEventArgs e)
