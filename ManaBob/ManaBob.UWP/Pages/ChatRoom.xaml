@@ -7,31 +7,95 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Grid Background="#FFFFEE">
-        <ListView x:Name="listView"  HorizontalAlignment="Left" Height="120" Margin="260,150,0,0" VerticalAlignment="Top" Width="90"/>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="150" Margin="260,100,0,0" VerticalAlignment="Top" Width="90">
-            <ListBoxItem Content="연규" Height="45" FontSize="5"/>
-            <ListBoxItem Content="연규" Height="45" FontSize="5"/>
-            <ListBoxItem Content="연규" Height="45" FontSize="5"/>
-            <ListBoxItem Content="연규" Height="45" FontSize="5"/>
-        </ListBox>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
 
-        <TextBlock x:Name="insert_cost"  Text="예상비용"  Foreground="Black"  HorizontalAlignment="Left"  Margin="272,300,-2,0"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="90"/>
-        <TextBox x:Name="cost" HorizontalAlignment="Left" Height="30" Margin="260,325,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="90"/>
-        <Button x:Name="report" Content="신고하기" HorizontalAlignment="Left" Height="40" Margin="68,540,0,0" VerticalAlignment="Top" Width="90" />
-        <Button x:Name="roomout" Content="방 나가기" HorizontalAlignment="Left" Height="40" Margin="185,540,0,0" VerticalAlignment="Top" Width="90" />
-        <Image x:Name="image" HorizontalAlignment="Left" Height="60" Margin="55,35,0,0" VerticalAlignment="Top" Width="60" Source="Assets/dish.png"/>
-        <TextBlock x:Name="Title" Text="만나밥" HorizontalAlignment="Left" FontSize="40" Height="60" Margin="120,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ScrollViewer HorizontalAlignment="Left" Height="380" Margin="10,100,0,0" VerticalAlignment="Top" Width="240" ScrollViewer.VerticalScrollBarVisibility="Hidden">
-            <StackPanel Name="MyStack">
-                <Image x:Name="abc" Source="Assets\test.png"/>
-                <Image x:Name="ab" Source="Assets\image.png"/>
-                <!--이미지를 사용하여 스크롤이 살아나는지 test-->
-            </StackPanel>
-        </ScrollViewer>
-        <Button x:Name="backbnt" HorizontalAlignment="Left" Height="30" Margin="10,55,0,0" VerticalAlignment="Top" Width="30" />
-        <TextBox x:Name="chat" HorizontalAlignment="Left" Margin="10,480,0,0" TextWrapping="Wrap" Text="chat" VerticalAlignment="Top" Width="190"/>
-        <Button x:Name="send" Content="전송" FontSize="10" Height="32"  HorizontalAlignment="Left" Margin="200,480,0,0" VerticalAlignment="Top" Width="50"/>
+        <RelativePanel Grid.Row="0" Background="Aqua">
+            <Image      x:Name="logoImage" 
+                        RelativePanel.AlignLeftWithPanel="True"
+                        Height="50" Width="50"
+                        />
+            <TextBlock  x:Name="headTextBlock" 
+                        RelativePanel.RightOf="logoImage"
+                        Height="40" Width="auto"
+                        Text="방 이름"
+                        FontSize="25"
+                        Margin="10,5,0,5"
+                        />
+            <!--방장에게만 보이는 수정 버튼-->
+            <Button     x:Name="changeButton"  
+                        RelativePanel.AlignRightWithPanel="True"
+                        Height="50" Width="50"
+                        Content="+"
+                        FontSize="25"
+                        />
+        </RelativePanel>
 
+        <Grid   Grid.Row="1" >
+            <ScrollViewer>
+                <StackPanel x:Name="MessageStackPanel"
+                            Orientation="Vertical">
+
+                    <!--상대방의 메세지-->
+                    <StackPanel Background="LightBlue">
+                        <TextBlock x:Name="snederTextBlock" 
+                                   Text="name"
+                                   />
+                        <TextBlock x:Name="OtherTextBlock" 
+                                   Text="OtherMessage"
+                                   TextWrapping="Wrap"
+                                   FontSize="20"
+                                   />
+                    </StackPanel>
+                    
+                    <!--자신의 메세지-->
+                    <StackPanel Background="LightCyan">
+                        <TextBlock x:Name="myTextBlock" 
+                                   Text="MyMessage"
+                                   TextAlignment="Right"
+                                   TextWrapping="Wrap"
+                                   FontSize="20"
+                                   />
+                    </StackPanel>
+                
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+        <Grid Grid.Row="2" 
+                       Background="AntiqueWhite">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <!--추가 커맨드 패널을 여는 버튼-->
+            <Button     x:Name="panelButton"  
+                        Grid.Column="0"
+                        Height="50" Width="50"
+                        Content="+"
+                        FontSize="25"
+                        />
+            <TextBox    x:Name="inputTextBox" 
+                        Grid.Column="1"
+                        Height="50" Width="auto"
+                        PlaceholderText="message here"
+                        FontSize="25"
+                        />
+            
+            <!--추가 커맨드 패널을 여는 버튼-->
+            <Button     x:Name="sendButton"  
+                        Grid.Column="2"
+                        Height="50" Width="50"
+                        Content="->"
+                        FontSize="25"
+                        />
+
+        </Grid>
+        
 
     </Grid>
 

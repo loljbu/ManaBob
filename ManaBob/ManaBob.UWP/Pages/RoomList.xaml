@@ -25,7 +25,7 @@
             <ComboBoxItem Content="기타" Tag="17"/>
         </ComboBox>
         <Image x:Name="image" HorizontalAlignment="Left" Height="60" Margin="10,35,0,0" VerticalAlignment="Top" Width="60" Source="Assets/dish.png"/>
-        <TextBlock x:Name="Title" Text="만나밥" HorizontalAlignment="Left" FontSize="40" Height="60" Margin="80,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <TextBlock x:Name="Title" Text="만나밥" HorizontalAlignment="Left" FontSize="40" Height="60" Margin="120,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="timeCh" HorizontalAlignment="Left" Margin="130,125,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100" Text="   시간선택"/>
         <TextBlock x:Name="CategoryCh"  HorizontalAlignment="Left" Margin="10,125,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100">
             <Run Text="   "/>

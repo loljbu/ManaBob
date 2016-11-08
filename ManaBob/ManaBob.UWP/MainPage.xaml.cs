@@ -22,7 +22,7 @@ namespace ManaBob.UWP
         public MainPage()
         {
             this.InitializeComponent();
-            LoadApplication(new ManaBob.AppCore());
+            //LoadApplication(new ManaBob.AppCore());
         }
 
         //private void login_Click(object sender, RoutedEventArgs e)
