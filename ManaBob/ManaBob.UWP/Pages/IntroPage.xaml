@@ -7,17 +7,21 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="White">
-
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:///Assets/main.jpg" Stretch="Fill"/>
+        </Grid.Background>
+
+
 
         <!--<StackPanel Grid.Row="0" Background="Gray"/>-->
         <Image Grid.Row="0" Width="100" Height="100"
                Source="Assets\test.png"/>
-        
+
         <TextBlock x:Name="Title"  
                    Grid.Row="0"
                    HorizontalAlignment="Center" VerticalAlignment="Center"  
@@ -28,7 +32,6 @@
                    />
 
         <StackPanel     Grid.Row="1" 
-                        Background="LightBlue"
                         Orientation="Vertical">
             <Button     x:Name="confirmButton" 
                         Content="인증하기" 
@@ -41,8 +44,12 @@
                         HorizontalAlignment="Center" 
                         Height="60" Width="120"   
                         Margin="10"
-                        />
+                        >
+                <Button.Background>
+                    <ImageBrush Stretch="Fill"/>
+                </Button.Background>
+            </Button>
         </StackPanel>
-        
+
     </Grid>
 </Page>

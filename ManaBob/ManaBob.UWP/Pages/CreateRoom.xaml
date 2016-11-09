@@ -7,31 +7,115 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="#FFEEFF">
-        <ComboBox x:Name="combo_category" SelectedValue ="{Binding SelectedDirection, Mode=TwoWay}" HorizontalAlignment="Left" Margin="48,220,0,0" VerticalAlignment="Top" Width="242" SelectedValuePath="Tag">
-            <ComboBoxItem Content="한식" Tag="0"/>
-            <ComboBoxItem Content="중식" Tag="1"/>
-            <ComboBoxItem Content="일식" Tag="2"/>
-            <ComboBoxItem Content="양식" Tag="3"/>
-            <ComboBoxItem Content="학식" Tag="4"/>
-        </ComboBox>
-        <ComboBox x:Name="combo_number" SelectedValue ="{Binding SelectedDirection, Mode=TwoWay}" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="48,380,0,0" VerticalAlignment="Top" Width="242">
-            <ComboBoxItem Content="2명" Tag="5"/>
-            <ComboBoxItem Content="3명" Tag="6"/>
-            <ComboBoxItem Content="4명" Tag="7"/>
-            <ComboBoxItem Content="기타" Tag="8"/>
-        </ComboBox>
-        <TextBox x:Name="cost" HorizontalAlignment="Left" Height="30" Margin="48,460,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="242"/>
-        <TextBox x:Name="MeetTime" HorizontalAlignment="Left" Height="30" Margin="48,300,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="242"/>
-        <TextBlock x:Name="critical" Text="*는 필수항목" Foreground="Red" HorizontalAlignment="Left" Margin="48,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="category" Text="* 카테고리선택" Foreground="Black" HorizontalAlignment="Left" Margin="48,190,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="joinNumber" Text="* 인원선택" Foreground="Black" HorizontalAlignment="Left" Margin="48,350,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="time" Text="* 시간선택" Foreground="Black" HorizontalAlignment="Left" Margin="48,270,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="insert_cost" Text="예상비용" Foreground="Black" HorizontalAlignment="Left" Margin="48,430,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="create" Content="만들기" HorizontalAlignment="Left" Height="40" Margin="68,540,0,0" VerticalAlignment="Top" Width="90" />
-        <Button x:Name="cancle" Content="취소" HorizontalAlignment="Left" Height="40" Margin="185,540,0,0" VerticalAlignment="Top" Width="90" />
-        <Image x:Name="image" HorizontalAlignment="Left" Height="60" Margin="55,35,0,0" VerticalAlignment="Top" Width="60" Source="Assets/dish.png"/>
-        <TextBlock x:Name="Title" Text="만나밥" HorizontalAlignment="Left" FontSize="40" Height="60" Margin="120,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="120"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" 
+              Background="Azure">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
 
+
+            <TextBlock    x:Name="titleTextBlock" 
+                          Grid.Column="1" Width="auto"
+                          Text="만 나 밥"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          FontSize="35"        
+                          />
+        </Grid>
+        <!--정보 입력 판넬-->
+        <Grid Grid.Row="1">
+            <StackPanel x:Name="inputStackPanel"        
+                    Background="Azure" >
+                <TextBlock  x:Name="critical" 
+                            Text="*는 필수항목" 
+                            Foreground="Red"  
+                            Margin="-140,50,0,20"
+                            Width="120"/>
+                <TextBlock  x:Name="category" 
+                            Text="* 카테고리선택"
+                            Foreground="Black"
+                            Margin="-140,0,0,10"
+                            Width="120"/>
+                <ComboBox   x:Name="combo_category" 
+                            SelectedValue ="{Binding SelectedDirection, Mode=TwoWay}" 
+                            SelectedValuePath="Tag"     
+                            Margin="50,0,68,20" 
+                            HorizontalAlignment="Stretch"
+                            Width="242">
+                    <ComboBoxItem Content="한식" Tag="0"/>
+                    <ComboBoxItem Content="중식" Tag="1"/>
+                    <ComboBoxItem Content="일식" Tag="2"/>
+                    <ComboBoxItem Content="양식" Tag="3"/>
+                    <ComboBoxItem Content="학식" Tag="4"/>
+                </ComboBox>
+                <TextBlock   x:Name="joinNumber" 
+                             Text="* 인원선택" 
+                             Foreground="Black" 
+                             Margin="-140,0,0,10"
+                             Width="120"/>
+                <ComboBox    x:Name="combo_number"   
+                             SelectedValue ="{Binding SelectedDirection, Mode=TwoWay}" 
+                             SelectedValuePath="Tag" 
+                             Margin="50,0,68,20" 
+                             HorizontalAlignment="Stretch"
+                             Width="242">
+                    <ComboBoxItem Content="2명" Tag="5"/>
+                    <ComboBoxItem Content="3명" Tag="6"/>
+                    <ComboBoxItem Content="4명" Tag="7"/>
+                    <ComboBoxItem Content="기타" Tag="8"/>
+                </ComboBox>
+                <TextBlock  x:Name="time" 
+                        Text="* 시간선택" 
+                        Foreground="Black"  
+                        Margin="-140,0,0,10"
+                        Width="120"/>
+                <TextBox    x:Name="cost"  
+                        Height="30" 
+                        Text="TextBox"
+                        Margin="-18,0,0,20"
+                        Width="242"/>
+                <TextBlock   x:Name="insert_cost" 
+                         Text="예상비용" 
+                         Foreground="Black" 
+                         Margin="-140,0,0,10"
+                         Width="120"/>
+                <TextBox     x:Name="MeetTime" 
+                         Height="30" 
+                         Text="TextBox"
+                         Margin="-18,0,0,20"
+                         Width="242"/>
+            </StackPanel>
+
+        </Grid >
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel     Grid.Column="0"
+                            Background="Azure">
+                <Button     x:Name="Button" 
+                            Content="인증하기" 
+                            HorizontalAlignment="Center" 
+                            Height="60" Width="120"  
+                            Margin="30" />
+
+            </StackPanel>
+            <StackPanel      x:Name="certifycation"  
+                             Grid.Column="1"
+                             Background="Azure" >
+                <Button     x:Name="makeButton" 
+                            Content="방만들기" 
+                            HorizontalAlignment="Center" 
+                            Height="60" Width="120"  
+                            Margin="30" />
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

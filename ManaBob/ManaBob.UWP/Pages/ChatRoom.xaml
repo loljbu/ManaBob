@@ -13,10 +13,11 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <RelativePanel Grid.Row="0" Background="Aqua">
+        <RelativePanel Grid.Row="0" Background="Azure">
             <Image      x:Name="logoImage" 
                         RelativePanel.AlignLeftWithPanel="True"
                         Height="50" Width="50"
+                        Source="ms-appx:///Assets/exit.png"
                         />
             <TextBlock  x:Name="headTextBlock" 
                         RelativePanel.RightOf="logoImage"
@@ -29,15 +30,21 @@
             <Button     x:Name="changeButton"  
                         RelativePanel.AlignRightWithPanel="True"
                         Height="50" Width="50"
-                        Content="+"
+
                         FontSize="25"
-                        />
+                        >
+                <Button.Background>
+                    <ImageBrush ImageSource="ms-appx:///Assets/chagne.png" 
+                                Stretch="Fill"/>
+                </Button.Background>
+            </Button>
         </RelativePanel>
 
         <Grid   Grid.Row="1" >
             <ScrollViewer>
                 <StackPanel x:Name="MessageStackPanel"
-                            Orientation="Vertical">
+                            Orientation="Vertical"
+                            Background="Azure">
 
                     <!--상대방의 메세지-->
                     <StackPanel Background="LightBlue">
@@ -65,8 +72,8 @@
             </ScrollViewer>
         </Grid>
 
-        <Grid Grid.Row="2" 
-                       Background="AntiqueWhite">
+        <Grid    Grid.Row="2" 
+                 Background="Azure">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50"/>
                 <ColumnDefinition Width="1*"/>
@@ -78,9 +85,14 @@
                         Height="50" Width="50"
                         Content="+"
                         FontSize="25"
-                        />
+                        >
+                <Button.Background>
+                    <ImageBrush Stretch="Fill"/>
+                </Button.Background>
+            </Button>
             <TextBox    x:Name="inputTextBox" 
                         Grid.Column="1"
+                        
                         Height="50" Width="auto"
                         PlaceholderText="message here"
                         FontSize="25"
@@ -90,9 +102,12 @@
             <Button     x:Name="sendButton"  
                         Grid.Column="2"
                         Height="50" Width="50"
-                        Content="->"
                         FontSize="25"
-                        />
+                        >
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/send.png"/>
+                </Button.Background>
+            </Button>
 
         </Grid>
         
