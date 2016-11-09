@@ -123,6 +123,7 @@
   <ItemGroup>
     <Content Include="Assets\back.png" />
     <Content Include="Assets\chagne.png" />
+    <Content Include="Assets\createRoom.png" />
     <Content Include="Assets\dish.png" />
     <Content Include="Assets\exit.png" />
     <Content Include="Assets\image.PNG" />
@@ -130,6 +131,7 @@
     <Content Include="Assets\logout.png" />
     <Content Include="Assets\main.jpg" />
     <Content Include="Assets\make.png" />
+    <Content Include="Assets\search.png" />
     <Content Include="Assets\send.png" />
     <Content Include="Assets\test.PNG" />
     <Content Include="Properties\Default.rd.xml" />

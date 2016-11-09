@@ -30,8 +30,6 @@
             <Button     x:Name="changeButton"  
                         RelativePanel.AlignRightWithPanel="True"
                         Height="50" Width="50"
-
-                        FontSize="25"
                         >
                 <Button.Background>
                     <ImageBrush ImageSource="ms-appx:///Assets/chagne.png" 
@@ -48,6 +46,7 @@
 
                     <!--상대방의 메세지-->
                     <StackPanel Background="LightBlue">
+
                         <TextBlock x:Name="snederTextBlock" 
                                    Text="name"
                                    />
@@ -102,7 +101,6 @@
             <Button     x:Name="sendButton"  
                         Grid.Column="2"
                         Height="50" Width="50"
-                        FontSize="25"
                         >
                 <Button.Background>
                     <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/send.png"/>
