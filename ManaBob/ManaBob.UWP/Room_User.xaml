@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="ManaBob.UWP.Room_User"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ManaBob.UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="150" Margin="260,100,0,0" VerticalAlignment="Top" Width="90">
+            <ListBoxItem Content="연규" Height="45" FontSize="5"/>
+            <ListBoxItem Content="연규" Height="45" FontSize="5"/>
+            <ListBoxItem Content="연규" Height="45" FontSize="5"/>
+            <ListBoxItem Content="연규" Height="45" FontSize="5"/>
+        </ListBox>
+        <TextBlock x:Name="insert_cost"  Text="예상비용"  Foreground="Black"  HorizontalAlignment="Left"  Margin="272,300,-2,0"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="90"/>
+        <TextBox x:Name="cost" HorizontalAlignment="Left" Height="30" Margin="260,325,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="90"/>
+        <Button x:Name="report" Content="신고하기" HorizontalAlignment="Left" Height="40" Margin="68,540,0,0" VerticalAlignment="Top" Width="90" Click="report_Click"/>
+        <Button x:Name="roomout" Content="방 나가기" HorizontalAlignment="Left" Height="40" Margin="185,540,0,0" VerticalAlignment="Top" Width="90" Click="roomout_Click"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="60" Margin="55,35,0,0" VerticalAlignment="Top" Width="60" Source="Assets/dish.png"/>
+        <TextBlock x:Name="Title" Text="만나밥" HorizontalAlignment="Left" FontSize="40" Height="60" Margin="120,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="380" Margin="10,100,0,0" VerticalAlignment="Top" Width="240" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <StackPanel Name="MyStack">
+                <Image x:Name="abc" Source="Assets\test.png"/>
+                <Image x:Name="ab" Source="Assets\image.png"/>
+                <!--이미지를 사용하여 스크롤이 살아나는지 test-->
+            </StackPanel>
+        </ScrollViewer>
+        <Button x:Name="backbnt" HorizontalAlignment="Left" Height="30" Margin="10,55,0,0" VerticalAlignment="Top" Width="30" />
+        <TextBox x:Name="chat" HorizontalAlignment="Left" Margin="10,480,0,0" TextWrapping="Wrap" Text="chat" VerticalAlignment="Top" Width="190"/>
+        <Button x:Name="send" Content="전송" FontSize="10" Height="32"  HorizontalAlignment="Left" Margin="200,480,0,0" VerticalAlignment="Top" Width="50"/>
+
+
+    </Grid>
+
+</Page>

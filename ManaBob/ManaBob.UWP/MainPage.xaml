@@ -9,10 +9,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <!--<Page.Resources>
+        <MenuFlyout x:Key="FlyoutBase1"/>
+    </Page.Resources>-->
 
-
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="144,247,0,0" VerticalAlignment="Top" Click="button_Click"/>
-
+    <Grid Background="White">
+        
     </Grid>
+
 </Page>
+<!--</forms:WindowsPage>-->

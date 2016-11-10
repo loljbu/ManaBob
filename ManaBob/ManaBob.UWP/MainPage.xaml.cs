@@ -22,17 +22,22 @@ namespace ManaBob.UWP
         public MainPage()
         {
             this.InitializeComponent();
-            LoadApplication(new ManaBob.AppCore());
+            //LoadApplication(new ManaBob.AppCore());
         }
 
-        void button_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.Frame.CanGoBack)
-            {
-                this.Frame.GoBack();
-            }
+        //private void login_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (this.Frame.CanGoBack)
+        //    {
+        //        this.Frame.GoBack();
+        //    }
 
-            //this.Frame.Navigate(typeof(RoomView));
-        }
+        //    //this.Frame.Navigate(typeof(RoomView));
+        //}
+
+        //private void confirm_Click(object sender, RoutedEventArgs e)
+        //{
+        //    // 인증하기 위해 페북 사이트로 이동
+        //}
     }
 }
