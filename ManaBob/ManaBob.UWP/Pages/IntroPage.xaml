@@ -13,40 +13,27 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.Background>
-            <ImageBrush ImageSource="ms-appx:///Assets/main.jpg" Stretch="Fill"/>
+            <ImageBrush ImageSource="ms-appx:///Assets/main.png" 
+                        Stretch="Fill"/>
         </Grid.Background>
-
-
-
-        <!--<StackPanel Grid.Row="0" Background="Gray"/>-->
-        <Image Grid.Row="0" Width="100" Height="100"
-               Source="Assets\test.png"/>
-
-        <TextBlock x:Name="Title"  
-                   Grid.Row="0"
-                   HorizontalAlignment="Center" VerticalAlignment="Center"  
-                   Width="180"  Height="50" 
-                   Text=" 만 나 밥 "  
-                   FontSize="40"  FontWeight="Bold"
-                   Foreground="Black" 
-                   />
 
         <StackPanel     Grid.Row="1" 
                         Orientation="Vertical">
-            <Button     x:Name="confirmButton" 
-                        Content="인증하기" 
+            <Button     x:Name="confirmButton"  
                         HorizontalAlignment="Center" 
                         Height="60" Width="120"  
                         Margin="10"
-                        />
-            <Button     x:Name="loginButton" 
-                        Content="로그인" 
-                        HorizontalAlignment="Center" 
-                        Height="60" Width="120"   
-                        Margin="10"
                         >
                 <Button.Background>
-                    <ImageBrush Stretch="Fill"/>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/IntroPage_confirm.png"/>
+                </Button.Background>
+            </Button>
+            <Button     x:Name="loginButton" 
+                        HorizontalAlignment="Center" 
+                        Height="60" Width="120"   
+                        Margin="10" >
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/IntroPage_login.png"/>
                 </Button.Background>
             </Button>
         </StackPanel>

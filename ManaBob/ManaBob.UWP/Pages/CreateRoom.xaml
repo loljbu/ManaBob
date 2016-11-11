@@ -20,42 +20,33 @@
             </Grid.ColumnDefinitions>
 
 
-            <TextBlock    x:Name="titleTextBlock" 
-                          Grid.Column="1" Width="auto"
-                          Text="만 나 밥"
+            <Image    x:Name="titleTextBlock" Width="130"
                           HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          FontSize="35"        
-                          />
+                          VerticalAlignment="Center" Height="50" Source="ms-appx:///Assets/title.PNG" />
         </Grid>
         <!--정보 입력 판넬-->
         <Grid Grid.Row="1">
             <StackPanel x:Name="inputStackPanel"        
                     Background="Azure" >
-                <TextBlock  x:Name="critical" 
-                            Text="*는 필수항목" 
-                            Foreground="Red"  
-                            Margin="-140,20,0,20"
-                            Width="120"/>
-                <TextBlock   x:Name="RoomTitleTextBlock" 
-                             Text="* 방 제목 입력" 
-                             Foreground="Black" 
-                             Margin="-140,0,0,10"
-                             Width="120"/>
-                <TextBox     x:Name="RoomTitleTextBox" 
-                             Height="30" 
-                             Text="TextBox"
-                             Margin="-18,0,0,20"
-                             Width="242"/>
-                <TextBlock  x:Name="category" 
-                            Text="* 카테고리선택"
-                            Foreground="Black"
-                            Margin="-140,0,0,10"
-                            Width="120"/>
+                <Image      x:Name="critical" 
+                            Margin="-150,20,0,10"
+                            Width="120" 
+                            Source="ms-appx:///Assets/필수항목.PNG"/>
+                <Image      x:Name="RoomTitleTextBlock"
+                            Margin="-150,0,0,5"
+                            Width="120" Source="ms-appx:///Assets/방제목.PNG"/>
+                <TextBox    x:Name="RoomTitleTextBox" 
+                            Height="30" 
+                            Text="TextBox"
+                            Margin="-28,0,0,20"
+                            Width="242"/>
+                <Image  x:Name="category" 
+                            Margin="-140,0,0,5"
+                            Width="120" Source="ms-appx:///Assets/카테고리.PNG"/>
                 <ComboBox   x:Name="combo_category" 
                             SelectedValue ="{Binding SelectedDirection, Mode=TwoWay}" 
                             SelectedValuePath="Tag"     
-                            Margin="50,0,68,20" 
+                            Margin="40,0,68,20" 
                             HorizontalAlignment="Stretch"
                             Width="242">
                     <ComboBoxItem Content="한식" Tag="0"/>
@@ -64,15 +55,13 @@
                     <ComboBoxItem Content="양식" Tag="3"/>
                     <ComboBoxItem Content="학식" Tag="4"/>
                 </ComboBox>
-                <TextBlock   x:Name="joinNumber" 
-                             Text="* 인원선택" 
-                             Foreground="Black" 
-                             Margin="-140,0,0,10"
-                             Width="120"/>
+                <Image       x:Name="joinNumber" 
+                             Margin="-140,0,0,5"
+                             Width="120" Source="ms-appx:///Assets/인원.PNG" />
                 <ComboBox    x:Name="combo_number"   
                              SelectedValue ="{Binding SelectedDirection, Mode=TwoWay}" 
                              SelectedValuePath="Tag" 
-                             Margin="50,0,68,20" 
+                             Margin="40,0,68,20" 
                              HorizontalAlignment="Stretch"
                              Width="242">
                     <ComboBoxItem Content="2명" Tag="5"/>
@@ -80,25 +69,21 @@
                     <ComboBoxItem Content="4명" Tag="7"/>
                     <ComboBoxItem Content="기타" Tag="8"/>
                 </ComboBox>
-                <TextBlock  x:Name="time" 
-                        Text="* 시간선택" 
-                        Foreground="Black"  
-                        Margin="-140,0,0,10"
-                        Width="120"/>
+                <Image  x:Name="time" 
+                        Margin="-140,0,0,5"
+                        Width="120" Source="ms-appx:///Assets/시간.PNG"/>
                 <TextBox    x:Name="cost"  
                         Height="30" 
                         Text="TextBox"
-                        Margin="-18,0,0,20"
+                        Margin="-28,0,0,20"
                         Width="242"/>
-                <TextBlock   x:Name="insert_cost" 
-                         Text="예상비용" 
-                         Foreground="Black" 
-                         Margin="-140,0,0,10"
-                         Width="120"/>
+                <Image   x:Name="insert_cost"  
+                         Margin="-140,0,0,5"
+                         Width="120" Source="ms-appx:///Assets/예상.PNG"/>
                 <TextBox     x:Name="MeetTime" 
                          Height="30" 
                          Text="TextBox"
-                         Margin="-18,0,0,20"
+                         Margin="-28,0,0,20"
                          Width="242"/>
             </StackPanel>
 
@@ -110,21 +95,27 @@
             </Grid.ColumnDefinitions>
             <StackPanel     Grid.Column="0"
                             Background="Azure">
-                <Button     x:Name="Button" 
-                            Content="인증하기" 
+                <Button     x:Name="Button"               
                             HorizontalAlignment="Center" 
-                            Height="60" Width="120"  
-                            Margin="30" />
+                            Height="60" Width="60"  
+                            Margin="30" >
+                    <Button.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/error.png"/>
+                    </Button.Background>
+                </Button>
 
             </StackPanel>
             <StackPanel      x:Name="certifycation"  
                              Grid.Column="1"
                              Background="Azure" >
                 <Button     x:Name="makeButton" 
-                            Content="방만들기" 
                             HorizontalAlignment="Center" 
-                            Height="60" Width="120"  
-                            Margin="30" />
+                            Height="60" Width="60"  
+                            Margin="30" >
+                    <Button.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/plus.png"/>
+                    </Button.Background>
+                </Button>
             </StackPanel>
         </Grid>
     </Grid>

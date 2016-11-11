@@ -45,16 +45,18 @@
                             Background="Azure">
 
                     <!--상대방의 메세지-->
-                    <StackPanel Background="LightBlue">
-
-                        <TextBlock x:Name="snederTextBlock" 
-                                   Text="name"
-                                   />
-                        <TextBlock x:Name="OtherTextBlock" 
-                                   Text="OtherMessage"
-                                   TextWrapping="Wrap"
-                                   FontSize="20"
-                                   />
+                    <StackPanel Background="LightBlue"
+                                Orientation="Horizontal">
+                        <Image Source="ms-appx:///Assets/user.png"
+                               Height="50"/>
+                        <StackPanel>
+                            <TextBlock  x:Name="snederTextBlock" 
+                                        Text="name" />
+                            <TextBlock  x:Name="OtherTextBlock" 
+                                        Text="OtherMessage"
+                                        TextWrapping="Wrap"
+                                         FontSize="20"/>
+                        </StackPanel>
                     </StackPanel>
                     
                     <!--자신의 메세지-->

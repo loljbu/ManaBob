@@ -22,34 +22,27 @@
             </Grid.ColumnDefinitions>
 
 
-            <TextBlock    x:Name="titleTextBlock" 
+            <Image       x:Name="titleTextBlock" 
                           Grid.Column="1" Width="auto"
-                          Text="만 나 밥"
                           HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          FontSize="35"        
-                          />
+                          VerticalAlignment="Center" Source="ms-appx:///Assets/title.PNG" />
             <Button     x:Name="changeButton"  
                         HorizontalAlignment="Right"
-                        Height="50" Width="50"
-                        
-                        >
+                        Height="50" Width="50"  >
                 <Button.Background>
                     <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/createRoom.png"/>
                 </Button.Background>
             </Button>
         </Grid>
         <Grid Grid.Row="1">
-            <TextBlock   x:Name="TitleSearchTextBlock" 
-                             Text="방 제목" 
-                             Foreground="Black" 
+            <Image          x:Name="TitleSearchImage" 
                              HorizontalAlignment="Left"
                              VerticalAlignment="Center"
-                             Width="60" Margin="15,0"/>
+                             Width="60" Margin="15,0" Source="ms-appx:///Assets/RoomList_title.PNG"/>
                 <TextBox     x:Name="TitleSearchTextBox" 
                              Height="30" 
                              VerticalAlignment="Center"
-                             Text="TextBox"   
+                             PlaceholderText="방 제목 입력"
                              Width="auto" Margin="75,10,70,10" />
             <Button     x:Name="searchButton"   
                         Height="50" Width="50"
@@ -67,17 +60,17 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <TextBlock x:Name="CategoryCh"   
-                           Height="30"
-                           Width="100" 
-                           Margin="10,10,10,60"
-                           Text="   메뉴선택" />
+                <Image      x:Name="CategoryCh"   
+                                Height="30"
+                                Width="100" 
+                                Margin="10,10,10,60" Source="ms-appx:///Assets/RoomList_menu.PNG" />
+
                 <ComboBox       x:Name="combo_category" 
                                 SelectedValue ="{Binding SelectedDirection, Mode=TwoWay}" 
                                 SelectedValuePath="Tag" 
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
-                                Width="100">
+                                Width="100" Margin="10,45,10,23">
                     <ComboBoxItem Content="한식" Tag="9"/>
                     <ComboBoxItem Content="중식" Tag="10"/>
                     <ComboBoxItem Content="일식" Tag="11"/>
@@ -86,35 +79,37 @@
                 </ComboBox>
             </Grid>
             <Grid Grid.Column="1">
-                <TextBlock      x:Name="timeCh" 
+                <Image         x:Name="timeCh" 
                                 Height="30"
                                 Width="100" 
-                                Margin="10,10,10,60"
-                                Text="   시간선택"/>
+                                Margin="10,10,10,60" 
+                               Source="ms-appx:///Assets/RoomList_time.PNG"/>
+                <TextBox        x:Name="cost"                                     
+                                    Height="30" 
+                                    PlaceholderText="13:00" 
+                                    Width="100" Margin="10,45,10,23"/>
+                
+            </Grid>
+            <Grid Grid.Column="2">
+                <Image      x:Name="JoinNumberCh" 
+                            Height="30"
+                            Width="100"
+                            Margin="10,10,10,60" 
+                            Source="ms-appx:///Assets/RoomList_number.PNG"/>
                 <ComboBox       x:Name="combo_number" 
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
-                                Width="100">
+                                Width="100" Margin="10,45,10,23">
                     <ComboBoxItem Content="2명" Tag="14"/>
                     <ComboBoxItem Content="3명" Tag="15"/>
                     <ComboBoxItem Content="4명" Tag="16"/>
                     <ComboBoxItem Content="기타" Tag="17"/>
                 </ComboBox>
-            </Grid>
-            <Grid Grid.Column="2">
-                <TextBlock       x:Name="JoinNumberCh" 
-                                     Height="30"
-                                     Width="100"
-                                     Margin="10,10,10,60"
-                                     Text="   인원선택"/>
-                <TextBox        x:Name="cost"                                     
-                                    Height="30" 
-                                    Text="TextBox" 
-                                    Width="100"/>
+               
             </Grid>
         </Grid>
         <Grid Grid.Row="3">
-            <ScrollViewer>
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden">
                 <StackPanel Orientation="Horizontal">
                     <StackPanel>
                         <!--아직 어떻게 방정보를 보여줄지 구성을 못했습니다.-->
