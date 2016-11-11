@@ -31,10 +31,10 @@
                 <Image      x:Name="critical" 
                             Margin="-150,20,0,10"
                             Width="120" 
-                            Source="ms-appx:///Assets/필수항목.PNG"/>
+                            Source="ms-appx:///Assets/CreateRoom_red.PNG"/>
                 <Image      x:Name="RoomTitleTextBlock"
                             Margin="-150,0,0,5"
-                            Width="120" Source="ms-appx:///Assets/방제목.PNG"/>
+                            Width="120" Source="ms-appx:///Assets/CreateRoom_title.PNG"/>
                 <TextBox    x:Name="RoomTitleTextBox" 
                             Height="30" 
                             Text="TextBox"
@@ -42,7 +42,7 @@
                             Width="242"/>
                 <Image  x:Name="category" 
                             Margin="-140,0,0,5"
-                            Width="120" Source="ms-appx:///Assets/카테고리.PNG"/>
+                            Width="120" Source="ms-appx:///Assets/CreateRoom_cata.PNG"/>
                 <ComboBox   x:Name="combo_category" 
                             SelectedValue ="{Binding SelectedDirection, Mode=TwoWay}" 
                             SelectedValuePath="Tag"     
@@ -57,7 +57,7 @@
                 </ComboBox>
                 <Image       x:Name="joinNumber" 
                              Margin="-140,0,0,5"
-                             Width="120" Source="ms-appx:///Assets/인원.PNG" />
+                             Width="120" Source="ms-appx:///Assets/CreateRoom_number.PNG" />
                 <ComboBox    x:Name="combo_number"   
                              SelectedValue ="{Binding SelectedDirection, Mode=TwoWay}" 
                              SelectedValuePath="Tag" 
@@ -71,7 +71,7 @@
                 </ComboBox>
                 <Image  x:Name="time" 
                         Margin="-140,0,0,5"
-                        Width="120" Source="ms-appx:///Assets/시간.PNG"/>
+                        Width="120" Source="ms-appx:///Assets/CreateRoom_time.PNG"/>
                 <TextBox    x:Name="cost"  
                         Height="30" 
                         Text="TextBox"
@@ -79,7 +79,7 @@
                         Width="242"/>
                 <Image   x:Name="insert_cost"  
                          Margin="-140,0,0,5"
-                         Width="120" Source="ms-appx:///Assets/예상.PNG"/>
+                         Width="120" Source="ms-appx:///Assets/CreateRoom_ex.PNG"/>
                 <TextBox     x:Name="MeetTime" 
                          Height="30" 
                          Text="TextBox"
