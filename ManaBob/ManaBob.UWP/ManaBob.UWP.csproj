@@ -127,6 +127,7 @@
     <Content Include="Assets\dish.png" />
     <Content Include="Assets\error.png" />
     <Content Include="Assets\exit.png" />
+    <Content Include="Assets\greenLight.png" />
     <Content Include="Assets\IntroPage_confirm.png" />
     <Content Include="Assets\IntroPage_login.png" />
     <Content Include="Assets\login.png" />
@@ -134,6 +135,7 @@
     <Content Include="Assets\main.png" />
     <Content Include="Assets\make.png" />
     <Content Include="Assets\plus.png" />
+    <Content Include="Assets\redLight.png" />
     <Content Include="Assets\RoomList_menu.PNG" />
     <Content Include="Assets\RoomList_number.PNG" />
     <Content Include="Assets\RoomList_time.PNG" />

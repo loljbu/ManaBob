@@ -17,8 +17,7 @@
             <Image      x:Name="logoImage" 
                         RelativePanel.AlignLeftWithPanel="True"
                         Height="50" Width="50"
-                        Source="ms-appx:///Assets/exit.png"
-                        />
+                        Source="ms-appx:///Assets/exit.png" Tapped="logoImage_Tapped" />
             <TextBlock  x:Name="headTextBlock" 
                         RelativePanel.RightOf="logoImage"
                         Height="40" Width="auto"
@@ -29,8 +28,7 @@
             <!--방장에게만 보이는 수정 버튼-->
             <Button     x:Name="changeButton"  
                         RelativePanel.AlignRightWithPanel="True"
-                        Height="50" Width="50"
-                        >
+                        Height="50" Width="50" Tapped="changeButton_Tapped"  >
                 <Button.Background>
                     <ImageBrush ImageSource="ms-appx:///Assets/chagne.png" 
                                 Stretch="Fill"/>

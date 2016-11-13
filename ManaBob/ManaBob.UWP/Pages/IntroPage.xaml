@@ -31,7 +31,7 @@
             <Button     x:Name="loginButton" 
                         HorizontalAlignment="Center" 
                         Height="60" Width="120"   
-                        Margin="10" >
+                        Margin="10" Tapped="loginButton_Tapped" >
                 <Button.Background>
                     <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/IntroPage_login.png"/>
                 </Button.Background>

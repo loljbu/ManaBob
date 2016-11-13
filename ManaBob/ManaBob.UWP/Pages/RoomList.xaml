@@ -28,7 +28,7 @@
                           VerticalAlignment="Center" Source="ms-appx:///Assets/title.PNG" />
             <Button     x:Name="changeButton"  
                         HorizontalAlignment="Right"
-                        Height="50" Width="50"  >
+                        Height="50" Width="50" Tapped="changeButton_Tapped"  >
                 <Button.Background>
                     <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/createRoom.png"/>
                 </Button.Background>
@@ -109,10 +109,396 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="3">
-            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden">
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel>
-                        <!--아직 어떻게 방정보를 보여줄지 구성을 못했습니다.-->
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden" >
+                <StackPanel Orientation="Vertical">
+                    <!--방 하나에 대한 정보-->
+                    <!--스크롤 확인을 위해 같은정보 반복-->
+                    <StackPanel Orientation="Vertical" Tapped="RoomList1_Tapped" >
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock      x:Name="roomNumberTextBlock"
+                                            Text="001"
+                                            Height="20"
+                                            Margin="10,0"/>
+                            <TextBlock      x:Name="roomMenuTextBlock"
+                                            Text="학식"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomTextTimeTextBlock"
+                                            Text="13:00"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomJoinNumberTextBlock"
+                                            Text="4명"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <Image          x:Name="roomStatusImage"
+                                            Height="10" Width="10"
+                                            HorizontalAlignment="Right"
+                                            Source="ms-appx:///Assets/redLight.png"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomTitleTextBlock"
+                                            Text="방 제목이 들어올 자리"
+                                            Margin="10,0"
+                                            Height="30" 
+                                            FontSize="20"/>
+                        </StackPanel>
+                       
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Tapped="RoomList2_Tapped">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomNumberTextBlock2"
+                                            Text="002"
+                                            Height="20"
+                                            Margin="10,0"/>
+                            <TextBlock      x:Name="roomMenuTextBlock2"
+                                            Text="학식"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomTextTimeTextBlock2"
+                                            Text="12:30"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomJoinNumberTextBlock2"
+                                            Text="4명"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <Image          x:Name="roomStatusImage2"
+                                            Height="10" Width="10"
+                                            HorizontalAlignment="Right"
+                                            Source="ms-appx:///Assets/redLight.png"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomTitleTextBlock2"
+                                            Text="방 제목이 들어올 자리"
+                                            Margin="10,0"
+                                            Height="30" Width="300"
+                                            FontSize="20"/>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" >
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock      x:Name="roomNumberTextBlock3"
+                                            Text="003"
+                                            Height="20"
+                                            Margin="10,0"/>
+                            <TextBlock      x:Name="roomMenuTextBlock3"
+                                            Text="양식"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomTextTimeTextBlock3"
+                                            Text="13:00"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomJoinNumberTextBlock3"
+                                            Text="2명"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <Image          x:Name="roomStatusImage3"
+                                            Height="10" Width="10"
+                                            HorizontalAlignment="Right"
+                                            Source="ms-appx:///Assets/greenLight.png"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomTitleTextBlock3"
+                                            Text="방 제목이 들어올 자리"
+                                            Margin="10,0"
+                                            Height="30" Width="300"
+                                            FontSize="20"/>
+                        </StackPanel>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomNumberTextBlock4"
+                                            Text="004"
+                                            Height="20"
+                                            Margin="10,0"/>
+                            <TextBlock      x:Name="roomMenuTextBlock4"
+                                            Text="일식"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomTextTimeTextBlock4"
+                                            Text="12:00"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomJoinNumberTextBlock4"
+                                            Text="2명"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <Image          x:Name="roomStatusImage4"
+                                            Height="10" Width="10"
+                                            HorizontalAlignment="Right"
+                                            Source="ms-appx:///Assets/redLight.png"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomTitleTextBlock4"
+                                            Text="방 제목이 들어올 자리"
+                                            Margin="10,0"
+                                            Height="30" Width="300"
+                                            FontSize="20"/>
+                        </StackPanel>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" >
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock      x:Name="roomNumberTextBlock5"
+                                            Text="005"
+                                            Height="20"
+                                            Margin="10,0"/>
+                            <TextBlock      x:Name="roomMenuTextBlock5"
+                                            Text="한식"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomTextTimeTextBlock5"
+                                            Text="13:00"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomJoinNumberTextBlock5"
+                                            Text="2명"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <Image          x:Name="roomStatusImage5"
+                                            Height="10" Width="10"
+                                            HorizontalAlignment="Right"
+                                            Source="ms-appx:///Assets/greenLight.png"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomTitleTextBlock5"
+                                            Text="방 제목이 들어올 자리"
+                                            Margin="10,0"
+                                            Height="30" Width="300"
+                                            FontSize="20"/>
+                        </StackPanel>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomNumberTextBlock6"
+                                            Text="006"
+                                            Height="20"
+                                            Margin="10,0"/>
+                            <TextBlock      x:Name="roomMenuTextBlock6"
+                                            Text="학식"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomTextTimeTextBlock6"
+                                            Text="12:30"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomJoinNumberTextBlock6"
+                                            Text="4명"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <Image          x:Name="roomStatusImage6"
+                                            Height="10" Width="10"
+                                            HorizontalAlignment="Right"
+                                            Source="ms-appx:///Assets/redLight.png"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomTitleTextBlock6"
+                                            Text="방 제목이 들어올 자리"
+                                            Margin="10,0"
+                                            Height="30" Width="300"
+                                            FontSize="20"/>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" >
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock      x:Name="roomNumberTextBlock7"
+                                            Text="007"
+                                            Height="20"
+                                            Margin="10,0"/>
+                            <TextBlock      x:Name="roomMenuTextBlock7"
+                                            Text="양식"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomTextTimeTextBlock7"
+                                            Text="12:00"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomJoinNumberTextBlock7"
+                                            Text="3명"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <Image          x:Name="roomStatusImage7"
+                                            Height="10" Width="10"
+                                            HorizontalAlignment="Right"
+                                            Source="ms-appx:///Assets/greenLight.png"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomTitleTextBlock7"
+                                            Text="방 제목이 들어올 자리"
+                                            Margin="10,0"
+                                            Height="30" Width="300"
+                                            FontSize="20"/>
+                        </StackPanel>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomNumberTextBlock8"
+                                            Text="008"
+                                            Height="20"
+                                            Margin="10,0"/>
+                            <TextBlock      x:Name="roomMenuTextBlock8"
+                                            Text="양식"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomTextTimeTextBlock8"
+                                            Text="13:00"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomJoinNumberTextBlock8"
+                                            Text="3명"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <Image          x:Name="roomStatusImage8"
+                                            Height="10" Width="10"
+                                            HorizontalAlignment="Right"
+                                            Source="ms-appx:///Assets/redLight.png"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomTitleTextBlock8"
+                                            Text="방 제목이 들어올 자리"
+                                            Margin="10,0"
+                                            Height="30" Width="300"
+                                            FontSize="20"/>
+                        </StackPanel>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" >
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock      x:Name="roomNumberTextBlock9"
+                                            Text="009"
+                                            Height="20"
+                                            Margin="10,0"/>
+                            <TextBlock      x:Name="roomMenuTextBloc9"
+                                            Text="학식"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomTextTimeTextBlock9"
+                                            Text="12:00"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomJoinNumberTextBloc9"
+                                            Text="4명"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <Image          x:Name="roomStatusImag9"
+                                            Height="10" Width="10"
+                                            HorizontalAlignment="Right"
+                                            Source="ms-appx:///Assets/greenLight.png"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomTitleTextBloc9"
+                                            Text="방 제목이 들어올 자리"
+                                            Margin="10,0"
+                                            Height="30" Width="300"
+                                            FontSize="20"/>
+                        </StackPanel>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomNumberTextBlock10"
+                                            Text="010"
+                                            Height="20"
+                                            Margin="10,0"/>
+                            <TextBlock      x:Name="roomMenuTextBlock10"
+                                            Text="중식"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomTextTimeTextBlock10"
+                                            Text="12:30"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomJoinNumberTextBlock10"
+                                            Text="4명"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <Image          x:Name="roomStatusImage10"
+                                            Height="10" Width="10"
+                                            HorizontalAlignment="Right"
+                                            Source="ms-appx:///Assets/greenLight.png"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomTitleTextBlock10"
+                                            Text="방 제목이 들어올 자리"
+                                            Margin="10,0"
+                                            Height="30" Width="300"
+                                            FontSize="20"/>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" >
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock      x:Name="roomNumberTextBlock11"
+                                            Text="011"
+                                            Height="20"
+                                            Margin="10,0"/>
+                            <TextBlock      x:Name="roomMenuTextBlock11"
+                                            Text="양식"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomTextTimeTextBlock11"
+                                            Text="12:30"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomJoinNumberTextBlock11"
+                                            Text="2명"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <Image          x:Name="roomStatusImage11"
+                                            Height="10" Width="10"
+                                            HorizontalAlignment="Right"
+                                            Source="ms-appx:///Assets/greenLight.png"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomTitleTextBlock11"
+                                            Text="방 제목이 들어올 자리"
+                                            Margin="10,0"
+                                            Height="30" Width="300"
+                                            FontSize="20"/>
+                        </StackPanel>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomNumberTextBlock12"
+                                            Text="012"
+                                            Height="20"
+                                            Margin="10,0"/>
+                            <TextBlock      x:Name="roomMenuTextBlock12"
+                                            Text="일식"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomTextTimeTextBlock12"
+                                            Text="12:00"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <TextBlock      x:Name="roomJoinNumberTextBlock12"
+                                            Text="2명"
+                                            Height="20"
+                                            Margin="5,0"/>
+                            <Image          x:Name="roomStatusImage12"
+                                            Height="10" Width="10"
+                                            HorizontalAlignment="Right"
+                                            Source="ms-appx:///Assets/redLight.png"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock      x:Name="roomTitleTextBlock12"
+                                            Text="방 제목이 들어올 자리"
+                                            Margin="10,0"
+                                            Height="30" Width="300"
+                                            FontSize="20"/>
+                        </StackPanel>
+
                     </StackPanel>
                 </StackPanel>
             </ScrollViewer>

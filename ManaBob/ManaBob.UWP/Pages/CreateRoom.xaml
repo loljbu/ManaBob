@@ -98,7 +98,7 @@
                 <Button     x:Name="Button"               
                             HorizontalAlignment="Center" 
                             Height="60" Width="60"  
-                            Margin="30" >
+                            Margin="30" Tapped="Button_Tapped" >
                     <Button.Background>
                         <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/error.png"/>
                     </Button.Background>
@@ -111,7 +111,7 @@
                 <Button     x:Name="makeButton" 
                             HorizontalAlignment="Center" 
                             Height="60" Width="60"  
-                            Margin="30" >
+                            Margin="30" Tapped="makeButton_Tapped" >
                     <Button.Background>
                         <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/plus.png"/>
                     </Button.Background>

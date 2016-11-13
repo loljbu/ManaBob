@@ -26,5 +26,35 @@ namespace ManaBob.UWP.Pages
         {
             this.InitializeComponent();
         }
+
+        private void RoomList2_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+            }
+
+            this.Frame.Navigate(typeof(ChatRoom));
+        }
+
+        private void RoomList1_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+            }
+
+            this.Frame.Navigate(typeof(ChatRoom));
+        }
+
+        private void changeButton_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+            }
+
+            this.Frame.Navigate(typeof(CreateRoom));
+        }
     }
 }

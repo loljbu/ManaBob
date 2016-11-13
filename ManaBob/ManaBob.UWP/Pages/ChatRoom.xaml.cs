@@ -26,5 +26,25 @@ namespace ManaBob.UWP.Pages
         {
             this.InitializeComponent();
         }
+
+        private void logoImage_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+            }
+
+            this.Frame.Navigate(typeof(RoomList));
+        }
+
+        private void changeButton_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+            }
+
+            this.Frame.Navigate(typeof(CreateRoom));
+        }
     }
 }
