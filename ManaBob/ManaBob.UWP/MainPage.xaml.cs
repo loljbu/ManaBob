@@ -21,7 +21,7 @@ namespace ManaBob.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new ManaBob.App());
+            LoadApplication(new ManaBob.AppCore());
         }
     }
 }
