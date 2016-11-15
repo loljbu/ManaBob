@@ -1,0 +1,126 @@
+﻿<Page
+    x:Class="ManaBob.UWP.Pages.RoomList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ManaBob.UWP.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Azure">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" 
+              Background="Azure">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock    x:Name="titleTextBlock" 
+                          Grid.Column="1" Width="auto"
+                          Text="만 나 밥"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          FontSize="35"        
+                          />
+            <Button     x:Name="changeButton"  
+                        HorizontalAlignment="Right"
+                        Height="50" Width="50"
+                        
+                        >
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/createRoom.png"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <TextBlock   x:Name="TitleSearchTextBlock" 
+                             Text="방 제목" 
+                             Foreground="Black" 
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Center"
+                             Width="60" Margin="15,0"/>
+                <TextBox     x:Name="TitleSearchTextBox" 
+                             Height="30" 
+                             VerticalAlignment="Center"
+                             Text="TextBox"   
+                             Width="auto" Margin="75,10,70,10" />
+            <Button     x:Name="searchButton"   
+                        Height="50" Width="50"
+                        HorizontalAlignment="Right">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" 
+                                ImageSource="ms-appx:///Assets/search.png" />
+                </Button.Background>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBlock x:Name="CategoryCh"   
+                           Height="30"
+                           Width="100" 
+                           Margin="10,10,10,60"
+                           Text="   메뉴선택" />
+                <ComboBox       x:Name="combo_category" 
+                                SelectedValue ="{Binding SelectedDirection, Mode=TwoWay}" 
+                                SelectedValuePath="Tag" 
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Width="100">
+                    <ComboBoxItem Content="한식" Tag="9"/>
+                    <ComboBoxItem Content="중식" Tag="10"/>
+                    <ComboBoxItem Content="일식" Tag="11"/>
+                    <ComboBoxItem Content="양식" Tag="12"/>
+                    <ComboBoxItem Content="학식" Tag="13"/>
+                </ComboBox>
+            </Grid>
+            <Grid Grid.Column="1">
+                <TextBlock      x:Name="timeCh" 
+                                Height="30"
+                                Width="100" 
+                                Margin="10,10,10,60"
+                                Text="   시간선택"/>
+                <ComboBox       x:Name="combo_number" 
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Width="100">
+                    <ComboBoxItem Content="2명" Tag="14"/>
+                    <ComboBoxItem Content="3명" Tag="15"/>
+                    <ComboBoxItem Content="4명" Tag="16"/>
+                    <ComboBoxItem Content="기타" Tag="17"/>
+                </ComboBox>
+            </Grid>
+            <Grid Grid.Column="2">
+                <TextBlock       x:Name="JoinNumberCh" 
+                                     Height="30"
+                                     Width="100"
+                                     Margin="10,10,10,60"
+                                     Text="   인원선택"/>
+                <TextBox        x:Name="cost"                                     
+                                    Height="30" 
+                                    Text="TextBox" 
+                                    Width="100"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="3">
+            <ScrollViewer>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <!--아직 어떻게 방정보를 보여줄지 구성을 못했습니다.-->
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>
