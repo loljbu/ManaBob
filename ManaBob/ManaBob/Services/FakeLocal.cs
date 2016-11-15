@@ -54,7 +54,7 @@ namespace ManaBob.Services
             }
         }
 
-        void IDisposable.Dispose()
+        void Dispose()
         {
             foreach(var item in dict)
             {

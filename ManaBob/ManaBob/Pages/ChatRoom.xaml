@@ -41,6 +41,7 @@
     <!-- Message Display Panel -->
     <Grid Grid.Row="1">
       <ScrollView>
+        
         <StackLayout x:Name="MessageStack"
                      Orientation="Vertical"
                      BackgroundColor="#EEEEFF">

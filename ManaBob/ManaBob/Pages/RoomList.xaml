@@ -50,15 +50,33 @@
                />
 
     <!-- 2. Filter  -->
-    <Grid>
-      
+    <Grid Grid.Row="2">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition>
+          <ColumnDefinition Width="1*"/>
+          <ColumnDefinition Width="1*"/>
+          <ColumnDefinition Width="1*"/>
+        </ColumnDefinition>
+      </Grid.ColumnDefinitions>
+
+      <Picker     x:Name="menuPick"
+                  Grid.Column="0"
+                  />
+      <TimePicker x:Name="timePick"
+                  Grid.Column="1"
+                  />
+      <Picker     x:Nmae="sizePick"
+                  Grid.Column="2"
+                  />
     </Grid>
   
-    <!-- Room List -->
-    
+    <!-- 3. Room List -->
+    <Grid Grid.Row="3" BackgroundColor="Lime">
+      <ScrollView>
+        <ListView x:Name="roomListView">
+        </ListView>
+      </ScrollView>
+    </Grid>
   </Grid>
   
-  
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
-
 </ContentPage>

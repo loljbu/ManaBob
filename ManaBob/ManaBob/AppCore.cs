@@ -14,19 +14,25 @@ namespace ManaBob
     public class AppCore : 
             Xamarin.Forms.Application
     {
-        Repository svc   = new Repository();
+        Repository services   = new Repository();
         Repository pages = new Repository();
 
         Navigator navi;
 
         public AppCore(INetService _net, ILocalService _local, IAuthService _auth)
         {
+            // Argument check
+            if(_net == null || _local == null || _auth == null)
+            {
+                throw new ArgumentNullException("AppCore initialization failed");
+            }
+
             // Net/Local services
             // ---- ---- ---- ---- ----
 
-            svc.Register<INetService>(_net);
-            svc.Register<ILocalService>(_local);
-            svc.Register<IAuthService>(_auth);
+            services.Register<INetService>(_net);
+            services.Register<ILocalService>(_local);
+            services.Register<IAuthService>(_auth);
 
 
             // Pages / Navigation
@@ -34,8 +40,8 @@ namespace ManaBob
 
             navi = new Navigator(this);
 
-            var intro = new ChatRoom(navi, pages);
-            pages.Register<ChatRoom>(intro);
+            var intro = new RoomList(navi, pages);
+            pages.Register<RoomList>(intro);
 
 
             // Mandatory for Framework's initialization
@@ -44,11 +50,6 @@ namespace ManaBob
 
         protected override void OnStart()
         {
-            //// The root page of your application
-            //var page = pages.Resolve<IntroPage>();
-            //if(page == null) { return; }
-            //var next = new NavigationPage(page);
-            //navi.GoAsyncTo(next);
             this.MainPage.DisplayAlert("OnStart", "Starting!", "accept", "cancel");
         }
 
