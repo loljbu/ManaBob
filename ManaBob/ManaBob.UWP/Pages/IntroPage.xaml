@@ -12,15 +12,12 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Grid.Background>
-            <ImageBrush ImageSource="ms-appx:///Assets/main.jpg" Stretch="Fill"/>
-        </Grid.Background>
 
 
 
         <!--<StackPanel Grid.Row="0" Background="Gray"/>-->
         <Image Grid.Row="0" Width="100" Height="100"
-               Source="Assets\test.png"/>
+               Source="test.png"/>
 
         <TextBlock x:Name="Title"  
                    Grid.Row="0"

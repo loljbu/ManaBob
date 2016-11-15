@@ -19,14 +19,14 @@ namespace ManaBob
 
         Navigator navi;
 
-        public AppCore()
+        public AppCore(INetService _net, ILocalService _local, IAuthService _auth)
         {
             // Net/Local services
             // ---- ---- ---- ---- ----
 
-            svc.Register<IAuthService>(new FakeAuth());
-            svc.Register<INetService>(new FakeNet());
-            svc.Register<ILocalService>(new FakeLocal());
+            svc.Register<INetService>(_net);
+            svc.Register<ILocalService>(_local);
+            svc.Register<IAuthService>(_auth);
 
 
             // Pages / Navigation
@@ -34,26 +34,22 @@ namespace ManaBob
 
             navi = new Navigator(this);
 
-            var intro = new IntroPage(navi, pages);
-            var login = new LoginPage(navi, pages);
-            var rlist = new RoomListPage(navi, pages);
-            var webvw = new WebPage(navi, pages);
+            var intro = new ChatRoom(navi, pages);
+            pages.Register<ChatRoom>(intro);
 
-            pages.Register<IntroPage>(intro);
-            pages.Register<LoginPage>(login);
-            pages.Register<RoomListPage>(rlist);
-            pages.Register<WebPage>(webvw);
 
+            // Mandatory for Framework's initialization
             this.MainPage = new NavigationPage(intro);
         }
 
         protected override void OnStart()
         {
-            // The root page of your application
-            var page = pages.Resolve<IntroPage>();
-            if(page == null) { return; }
-            var next = new NavigationPage(page);
-            navi.GoAsyncTo(next);
+            //// The root page of your application
+            //var page = pages.Resolve<IntroPage>();
+            //if(page == null) { return; }
+            //var next = new NavigationPage(page);
+            //navi.GoAsyncTo(next);
+            this.MainPage.DisplayAlert("OnStart", "Starting!", "accept", "cancel");
         }
 
         protected override void OnSleep()

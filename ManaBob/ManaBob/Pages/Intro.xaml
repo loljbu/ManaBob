@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ManaBob.Pages.Intro">
+ 
+    <StackLayout Orientation="Vertical">
+      <Entry x:Name="EntryID"  Placeholder="ID" />
+      <Entry x:Name="EntryPWD" Placeholder="Password" />
+
+      <Button Text="Enter"
+              Clicked="GoToLoginPage"></Button>
+    </StackLayout>
+  
+</ContentPage>

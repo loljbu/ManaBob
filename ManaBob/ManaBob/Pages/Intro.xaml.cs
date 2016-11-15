@@ -8,25 +8,24 @@ using Xamarin.Forms;
 
 namespace ManaBob.Pages
 {
-    public partial class IntroPage : ContentPage
+    public partial class Intro : ContentPage
     {
-        Navigator   navi;
-        Repository  pages;
+        Navigator navi;
+        Repository pages;
 
-        public IntroPage(Navigator _navi, Repository _pages)
+        public Intro(Navigator _navi, Repository _pages)
         {
             navi = _navi;
             pages = _pages;
             InitializeComponent();
         }
-
         protected void GoToLoginPage(object sender, EventArgs e)
         {
-            var next = pages.Resolve<LoginPage>();
-            if(next == null) { return; }
+            //var next = pages.Resolve<LoginPage>();
+            //if(next == null) { return; }
 
-            navi.GoAsyncTo(new NavigationPage(next));
+            //navi.GoAsyncTo(new NavigationPage(next));
         }
-
     }
+
 }

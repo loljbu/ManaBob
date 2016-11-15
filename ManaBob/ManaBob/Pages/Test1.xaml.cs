@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace ManaBob.Pages
 {
-    public partial class CreateRoomPage : ContentPage
+    public partial class Test1 : ContentPage
     {
-        public CreateRoomPage()
+        public Test1()
         {
             InitializeComponent();
         }

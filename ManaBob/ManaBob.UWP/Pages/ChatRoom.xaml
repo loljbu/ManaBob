@@ -17,7 +17,7 @@
             <Image      x:Name="logoImage" 
                         RelativePanel.AlignLeftWithPanel="True"
                         Height="50" Width="50"
-                        Source="ms-appx:///Assets/exit.png"
+                        Source="ms-appx:///Images/exit.png"
                         />
             <TextBlock  x:Name="headTextBlock" 
                         RelativePanel.RightOf="logoImage"
@@ -32,7 +32,7 @@
                         Height="50" Width="50"
                         >
                 <Button.Background>
-                    <ImageBrush ImageSource="ms-appx:///Assets/chagne.png" 
+                    <ImageBrush ImageSource="ms-appx:///Images/chagne.png" 
                                 Stretch="Fill"/>
                 </Button.Background>
             </Button>

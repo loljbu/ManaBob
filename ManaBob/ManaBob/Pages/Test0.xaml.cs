@@ -8,11 +8,12 @@ using Xamarin.Forms;
 
 namespace ManaBob.Pages
 {
-    public partial class ChatRoomPage : ContentPage
+    public partial class Test0 : ContentPage
     {
-        public ChatRoomPage()
+        public Test0()
         {
             InitializeComponent();
         }
     }
+
 }
