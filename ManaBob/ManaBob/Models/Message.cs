@@ -7,42 +7,44 @@ using System.Threading.Tasks;
 namespace ManaBob
 {
 
-    // - Note
-    //      Serialization/Deserialization이 가능한 메세지
-    // - Extension
-    //      - Text      : text
-    //      - Binary    : image
-    //      - Blob      : zip
+    /// <summary>
+    ///     Serialization/Deserialization이 가능한 메세지
+    /// </summary>
     public class Message
     {
         // - Note
         //      메세지 종류. 일부 확장자를 지원하는 것을 고려
         // - To Do
         //      우선 구현 : Text
-        public enum Category
+        public enum Tag
         {
             Binary,
-            Text,
-            //Blob,
-            //JPEG,
-            //PDF,
-            //Zip,
+            Text
         }
 
+        public String   Sender { get; set; }
+        public Int64    SenderID { get; set; }
+        public Tag      Type { get; set; }
+        /// <summary>
+        /// Serialized Bytes
+        /// </summary>
+        public Byte[]   Bytes { get; set; }
 
-        public Int64    ID;
-        public Category Type { get; set; }
 
-        public Message()
+        public Message(String _sender, String _text)
         {
-            this.ID = 0;
-            this.Type = Category.Binary;
+            Sender = _sender;
+            SenderID = _sender.GetHashCode();
+            Type = Tag.Text;
+            Bytes = Encoding.UTF8.GetBytes(_text);
         }
 
-        public Message(Int64 _id, Category _type)
+        public Message(String _sender, Byte[] _bytes)
         {
-            this.ID = _id;
-            this.Type = _type;
+            Sender = _sender;
+            SenderID = _sender.GetHashCode();
+            Type = Tag.Binary;
+            Bytes = _bytes;
         }
 
     }

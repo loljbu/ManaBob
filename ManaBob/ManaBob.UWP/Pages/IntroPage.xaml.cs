@@ -12,25 +12,19 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Xamarin.Forms;
 
-using ManaBob.Services;
+// 빈 페이지 항목 템플릿에 대한 설명은 http://go.microsoft.com/fwlink/?LinkId=234238에 나와 있습니다.
 
-namespace ManaBob.UWP
+namespace ManaBob.UWP.Pages
 {
-    public sealed partial class MainPage
+    /// <summary>
+    /// 자체적으로 사용하거나 프레임 내에서 탐색할 수 있는 빈 페이지입니다.
+    /// </summary>
+    public sealed partial class IntroPage : Page
     {
-
-        public MainPage()
+        public IntroPage()
         {
             this.InitializeComponent();
-            var netSvc      = new ManaBob.Services.FakeNet();
-            var localSvc    = new ManaBob.Services.FakeLocal();
-            var authSvc     = new ManaBob.Services.FakeAuth();
-
-            var Core = new ManaBob.AppCore(netSvc, localSvc, authSvc);
-            LoadApplication(Core);
         }
-        
     }
 }

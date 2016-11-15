@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ManaBob.Pages.RoomList">  
+  <!--Main Grid-->
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="50"/>
+      <RowDefinition Height="50"/>
+      <RowDefinition Height="50"/>
+      <RowDefinition Height="1*"/>
+    </Grid.RowDefinitions>
+
+    <!-- 0. Top Panel -->
+    <Grid Grid.Row="0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="50"/>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="50"/>
+      </Grid.ColumnDefinitions>
+
+      <!--Application Logo-->
+      <Image  x:Name="logoImage"
+              Grid.Column="0"
+              Source="Images/dish.png"
+              HeightRequest="50" WidthRequest="50"
+              />
+      
+      <!--Room Name-->
+      <Label  x:Name="appName"
+              Grid.Column="1"
+              HeightRequest="50"
+              Text="만나밥"
+              HorizontalTextAlignment="Center"
+              VerticalTextAlignment="Center"
+              />
+      
+      <!--Dummy Button for check-->
+      <Button 
+              BackgroundColor="Gray"
+              Grid.Column="2"
+              HeightRequest="50" WidthRequest="50"
+              />
+    </Grid>
+
+
+    <!-- 1. Room Search -->
+    <SearchBar x:Name="searchBar"
+               Grid.Row="1"
+               />
+
+    <!-- 2. Filter  -->
+    <Grid Grid.Row="2">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition>
+          <ColumnDefinition Width="1*"/>
+          <ColumnDefinition Width="1*"/>
+          <ColumnDefinition Width="1*"/>
+        </ColumnDefinition>
+      </Grid.ColumnDefinitions>
+
+      <Picker     x:Name="menuPick"
+                  Grid.Column="0"
+                  />
+      <TimePicker x:Name="timePick"
+                  Grid.Column="1"
+                  />
+      <Picker     x:Nmae="sizePick"
+                  Grid.Column="2"
+                  />
+    </Grid>
+  
+    <!-- 3. Room List -->
+    <Grid Grid.Row="3" BackgroundColor="Lime">
+      <ScrollView>
+        <ListView x:Name="roomListView">
+        </ListView>
+      </ScrollView>
+    </Grid>
+  </Grid>
+  
+</ContentPage>

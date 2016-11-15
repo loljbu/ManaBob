@@ -14,64 +14,53 @@ namespace ManaBob
     public class AppCore : 
             Xamarin.Forms.Application
     {
-        Repository repo = new Repository();
+        Repository services   = new Repository();
+        Repository pages = new Repository();
 
-        public AppCore()
+        Navigator navi;
+
+        public AppCore(INetService _net, ILocalService _local, IAuthService _auth)
         {
+            // Argument check
+            if(_net == null || _local == null || _auth == null)
+            {
+                throw new ArgumentNullException("AppCore initialization failed");
+            }
+
             // Net/Local services
-            repo.Register<IAuthService>(new FakeAuth());
-            repo.Register<INetService>(new FakeNet());
-            repo.Register<ILocalService>(new FakeLocal());
+            // ---- ---- ---- ---- ----
 
-            // Pages
-            repo.Register<IntroPage>(new IntroPage(this));
-            repo.Register<LoginPage>(new LoginPage(this));
-            repo.Register<RoomListPage>(new RoomListPage(this));
-            repo.Register<WebPage>(new WebPage(this));
+            services.Register<INetService>(_net);
+            services.Register<ILocalService>(_local);
+            services.Register<IAuthService>(_auth);
 
 
-            // The root page of your application
-            var main = repo.Resolve<IntroPage>();
-            this.NavigateTo(main);
+            // Pages / Navigation
+            // ---- ---- ---- ---- ----
+
+            navi = new Navigator(this);
+
+            var intro = new RoomList(navi, pages);
+            pages.Register<RoomList>(intro);
+
+
+            // Mandatory for Framework's initialization
+            this.MainPage = new NavigationPage(intro);
         }
-
-        public Repository Repo
-        {
-            get{ return repo; }
-        }
-
-        public void NavigateTo(Page _next)
-        {
-            if(_next == null) { return; }
-            this.MainPage = new NavigationPage(_next);
-        }
-
-        public async void PushTo(Page _next)
-        {
-            if (_next == null) { return; }
-            var navPage = new NavigationPage(_next);
-            await this.MainPage.Navigation.PushAsync(navPage);
-        }
-
-        public async void Pop()
-        {
-            await this.MainPage.Navigation.PopAsync();
-        }
-
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            this.MainPage.DisplayAlert("OnStart", "Starting!", "accept", "cancel");
         }
 
         protected override void OnSleep()
         {
-            // Handle when your app sleeps
+            //this.MainPage.DisplayAlert("OnSleep", "sleeping", "accept", "cancel");
         }
 
         protected override void OnResume()
         {
-            // Handle when your app resumes
+            this.MainPage.DisplayAlert("OnResume", "resumed", "accept", "cancel");
         }
     }
 

@@ -21,7 +21,49 @@ namespace ManaBob.Windows
         {
             this.InitializeComponent();
 
-            LoadApplication(new ManaBob.App());
+            //LoadApplication(new ManaBob.App());
+        }
+
+        private void button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            // Delete the file if it exists.
+
+
+            //String filepath = @"C:\test.txt";
+            //StreamWriter str = new StreamWriter();
+
+
+            //char[] ch = text.ToCharArray();
+            //for (int i = 0; i < ch.Length; i++)
+            //{
+            //   str.AsStreamForWrite(ch[i]);
+            //}
+            //str.Dispose();
+
+
+            String text = textBox.Text;
+            StorageFolder current = ApplicationData.Current.LocalFolder;
+            StorageFile file = await current.CreateFileAsync(text, CreationCollisionOption.ReplaceExisting);
+            IRandomAccessStream writeStream = await file.OpenAsync(FileAccessMode.ReadWrite);
+            IOutputStream outputStream = writeStream.GetOutputStreamAt(0);
+            DataWriter dataWriter = new DataWriter(outputStream);
+            dataWriter.WriteString(" ");
+            await dataWriter.StoreAsync();
+            await outputStream.FlushAsync();
+
+
+            UnicodeEncoding uniencoding = new UnicodeEncoding();
+            string filename = @"c:\Users\exampleuser\Documents\userinputlog.txt";
+
+            using (FileStream SourceStream = File.Open(filename, FileMode.OpenOrCreate))
+            {
+                SourceStream.Seek(0, SeekOrigin.End);
+                await SourceStream.WriteAsync(result, 0, result.Length);
+            }
+
+            string path = "C:\\ListColorRGB.txt";
+            System.Environment.
+            StreamReader sr = new StreamReader();
         }
     }
 }

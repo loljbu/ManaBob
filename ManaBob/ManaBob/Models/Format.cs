@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 using Newtonsoft.Json;
 
@@ -10,26 +11,25 @@ namespace ManaBob
 {
 
     /// <summary>
-    ///     Object serialization/deserialization with JSON
+    ///     Object serialization/deserialization with JSON.
+    ///     Use `Mutex` to race possible race condition in
+    ///     `Newtonsoft.Json` library
     /// </summary>
     /// <remarks>
     ///     `Newtonsoft.Json`
     /// </remarks>
     public class Format
     {
-        public Format()
+        public static T FromJson<T>(String _json)
         {
-            // Context...
+            var result = JsonConvert.DeserializeObject<T>(_json);
+            return result;
         }
 
-        public T FromJson<T>(String _json)
+        public static String ToJson<T>(T _object)
         {
-            return JsonConvert.DeserializeObject<T>(_json);
-        }
-
-        public String ToJson<T>(T _object)
-        {
-            return JsonConvert.SerializeObject(_object);
+            var result = JsonConvert.SerializeObject(_object);
+            return result;
         }
 
     }

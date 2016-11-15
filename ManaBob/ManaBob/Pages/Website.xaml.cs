@@ -8,18 +8,21 @@ using Xamarin.Forms;
 
 namespace ManaBob.Pages
 {
-    public partial class WebPage : ContentPage
+    public partial class Website : ContentPage
     {
-        AppCore core;
-        public WebPage(AppCore _core)
+        Navigator navi;
+        Repository pages;
+
+        public Website(Navigator _navi, Repository _pages)
         {
-            core = _core;
+            navi = _navi;
+            pages = _pages;
             InitializeComponent();
         }
 
         public void Display(UrlWebViewSource _source)
         {
-            this.webView.Source = _source;
+            //this.webView.Source = _source;
         }
     }
 }
