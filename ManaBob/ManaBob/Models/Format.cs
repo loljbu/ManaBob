@@ -20,26 +20,15 @@ namespace ManaBob
     /// </remarks>
     public class Format
     {
-        static Mutex to_lock   = new Mutex();
-        static Mutex from_lock = new Mutex();
-
-        public Format()
+        public static T FromJson<T>(String _json)
         {
-        }
-
-        public T FromJson<T>(String _json)
-        {
-            from_lock.WaitOne();
             var result = JsonConvert.DeserializeObject<T>(_json);
-            from_lock.ReleaseMutex();
             return result;
         }
 
-        public String ToJson<T>(T _object)
+        public static String ToJson<T>(T _object)
         {
-            to_lock.WaitOne();
             var result = JsonConvert.SerializeObject(_object);
-            to_lock.ReleaseMutex();
             return result;
         }
 

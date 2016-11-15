@@ -14,19 +14,25 @@ namespace ManaBob
     public class AppCore : 
             Xamarin.Forms.Application
     {
-        Repository svc   = new Repository();
+        Repository services   = new Repository();
         Repository pages = new Repository();
 
         Navigator navi;
 
-        public AppCore()
+        public AppCore(INetService _net, ILocalService _local, IAuthService _auth)
         {
+            // Argument check
+            if(_net == null || _local == null || _auth == null)
+            {
+                throw new ArgumentNullException("AppCore initialization failed");
+            }
+
             // Net/Local services
             // ---- ---- ---- ---- ----
 
-            svc.Register<IAuthService>(new FakeAuth());
-            svc.Register<INetService>(new FakeNet());
-            svc.Register<ILocalService>(new FakeLocal());
+            services.Register<INetService>(_net);
+            services.Register<ILocalService>(_local);
+            services.Register<IAuthService>(_auth);
 
 
             // Pages / Navigation
@@ -34,26 +40,17 @@ namespace ManaBob
 
             navi = new Navigator(this);
 
-            var intro = new IntroPage(navi, pages);
-            var login = new LoginPage(navi, pages);
-            var rlist = new RoomListPage(navi, pages);
-            var webvw = new WebPage(navi, pages);
+            var intro = new RoomList(navi, pages);
+            pages.Register<RoomList>(intro);
 
-            pages.Register<IntroPage>(intro);
-            pages.Register<LoginPage>(login);
-            pages.Register<RoomListPage>(rlist);
-            pages.Register<WebPage>(webvw);
 
+            // Mandatory for Framework's initialization
             this.MainPage = new NavigationPage(intro);
         }
 
         protected override void OnStart()
         {
-            // The root page of your application
-            var page = pages.Resolve<IntroPage>();
-            if(page == null) { return; }
-            var next = new NavigationPage(page);
-            navi.GoAsyncTo(next);
+            this.MainPage.DisplayAlert("OnStart", "Starting!", "accept", "cancel");
         }
 
         protected override void OnSleep()

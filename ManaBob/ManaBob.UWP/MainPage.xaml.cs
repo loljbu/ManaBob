@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Xamarin.Forms;
 
+using ManaBob.Services;
+
 namespace ManaBob.UWP
 {
     public sealed partial class MainPage
@@ -22,22 +24,13 @@ namespace ManaBob.UWP
         public MainPage()
         {
             this.InitializeComponent();
-            //LoadApplication(new ManaBob.AppCore());
+            var netSvc      = new ManaBob.Services.FakeNet();
+            var localSvc    = new ManaBob.Services.FakeLocal();
+            var authSvc     = new ManaBob.Services.FakeAuth();
+
+            var Core = new ManaBob.AppCore(netSvc, localSvc, authSvc);
+            LoadApplication(Core);
         }
-
-        //private void login_Click(object sender, RoutedEventArgs e)
-        //{
-        //    if (this.Frame.CanGoBack)
-        //    {
-        //        this.Frame.GoBack();
-        //    }
-
-        //    //this.Frame.Navigate(typeof(RoomView));
-        //}
-
-        //private void confirm_Click(object sender, RoutedEventArgs e)
-        //{
-        //    // 인증하기 위해 페북 사이트로 이동
-        //}
+        
     }
 }
