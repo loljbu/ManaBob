@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ManaBob.Pages.CreateRoom">
+  <!--Main Grid-->
+  <Grid BackgroundColor="#FFFFEE">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="50"/>
+      <RowDefinition Height="1*"/>
+      <RowDefinition Height="50"/>
+    </Grid.RowDefinitions>
+
+    <!--Top Panel-->
+    <Grid Grid.Row="0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="50"/>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="50"/>
+      </Grid.ColumnDefinitions>
+
+      <!--Room Name-->
+      <Label  x:Name="title"
+              Grid.Column="1"
+              HeightRequest="50"
+              Text="만 나 밥"
+              />
+    </Grid>
+
+    <Grid Grid.Row="1">
+       
+
+          <StackLayout x:Name="intputStackPanel"
+                       Orientation="Vertical"
+                       BackgroundColor="#EEEEFF">
+
+            <!--*필수항목-->
+            <Label  x:Name="critical"
+                            Text="*는 필수항목"
+                            TextColor="Red"
+                            Margin="-140,20,0,20"
+                            WidthRequest="120"/>
+
+            <!--*방 제목 입력-->
+            <Label   x:Name="RoomTitleTextBlock"
+                             Text="* 방 제목 입력"
+                             TextColor="Black"
+                             Margin="-140,0,0,10"
+                             WidthRequest="120"/>
+            <!--*카테고리선택-->
+            <Entry  x:Name="RoomTitleTextBox"
+                     HeightRequest="30"
+                     Text="TextBox"
+                     Margin="-18,0,0,20"
+                     WidthRequest="242"/>
+            <Label  x:Name="categoryLabel"
+                            Text="* 카테고리선택"
+                            Margin="-140,0,0,10"
+                            WidthRequest="120"/>
+            <Picker     x:Name="category"
+
+                  />
+            
+          <!--*인원선택-->
+            <Label   x:Name="joinNumber"
+                             Text="* 인원선택"
+                             TextColor="Black"
+                             Margin="-140,0,0,10"
+                             WidthRequest="120"/>
+          <!--*시간선택-->
+            <Label  x:Name="time"
+                       Text="* 시간선택"
+                       TextColor="Black"
+                       Margin="-140,0,0,10"
+                       WidthRequest="120"/>
+            <Entry    x:Name="cost"
+                   HeightRequest="30"
+                   Text="TextBox"
+                   Margin="-18,0,0,20"
+                   WidthRequest="242"/>
+            <!--예상비용-->
+            <Label  x:Name="insert_cost"
+                        Text="예상비용"
+                        TextColor="Black"
+                        Margin="-140,0,0,10"
+                        WidthRequest="120"/>
+            <Entry     x:Name="MeetTime"
+                     HeightRequest="30"
+                     Text="TextBox"
+                     Margin="-18,0,0,20"
+                     WidthRequest="242"/>
+
+          </StackLayout>
+      </Grid>
+    
+    <Grid Grid.Row="2">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="1*"/>
+          <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <StackLayout     Grid.Column="0"
+                           BackgroundColor="#EEEEFF">
+          <Button     x:Name="Button"
+                      Text="인증하기"
+                      HeightRequest="60" WidthRequest="120"
+                      Margin="30" />
+
+        </StackLayout>
+        <StackLayout      x:Name="certifycation"
+                             Grid.Column="1"
+                             BackgroundColor="#EEEEFF" >
+          <Button     x:Name="makeButton"
+                      Text="방만들기"
+                      HeightRequest="60" WidthRequest="120"
+                      Margin="30" />
+        </StackLayout>
+      </Grid>
+
+
+
+  
+  </Grid>
+ 
+</ContentPage>

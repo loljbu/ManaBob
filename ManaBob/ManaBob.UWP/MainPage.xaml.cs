@@ -12,16 +12,25 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Xamarin.Forms;
+
+using ManaBob.Services;
 
 namespace ManaBob.UWP
 {
     public sealed partial class MainPage
     {
+
         public MainPage()
         {
             this.InitializeComponent();
+            var netSvc      = new ManaBob.Services.FakeNet();
+            var localSvc    = new ManaBob.Services.FakeLocal();
+            var authSvc     = new ManaBob.Services.FakeAuth();
 
-            LoadApplication(new ManaBob.App());
+            var Core = new ManaBob.AppCore(netSvc, localSvc, authSvc);
+            LoadApplication(Core);
         }
+        
     }
 }

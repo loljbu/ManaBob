@@ -7,7 +7,7 @@ using System.IO;
 
 namespace ManaBob
 {
-    interface ILocalService
+    public interface ILocalService
     {
         // - Note
         //      `StreamWriter`, `StreamReader`에서 사용할 수 있는 
