@@ -34,7 +34,8 @@
               HorizontalTextAlignment="Center"
               VerticalTextAlignment="Center"
               />
-      
+
+
       <!--Dummy Button for check-->
       <Button 
               BackgroundColor="Gray"

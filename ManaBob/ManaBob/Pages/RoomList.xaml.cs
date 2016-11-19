@@ -74,6 +74,18 @@ namespace ManaBob.Pages
             pages = _pages;
 			InitializeComponent ();
 
+            var strings = new List<String>
+            {
+                "",
+                "",
+                "",
+            };
+
+            foreach(var str in strings)
+            {
+                menuPick.Items.Add(str);
+            }
+
             //List<Room> rooms = RoomListTest.GetRoomList();
             roomListView.ItemTapped += (sender, args)=>
             {
