@@ -38,7 +38,6 @@
   <ItemGroup>
     <Compile Include="AppCore.cs" />
     <Compile Include="Controls\RoomViewCell.cs" />
-    <Compile Include="Models\Bindable.cs" />
     <Compile Include="Models\Format.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Repository.cs" />

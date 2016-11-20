@@ -8,26 +8,6 @@ namespace ManaBob
 {
 
     /// <summary>
-    ///     식사 메뉴. 필터링에 사용
-    /// </summary>
-    public enum Menu
-    {
-        Unknown = 0,    // Default value
-        Kor,
-    }
-
-    /// <summary>
-    ///     현재 방(Room)의 상태
-    /// </summary>
-    public enum Status
-    {
-        Open = 0,
-        Full,
-        Closed
-    }
-
-
-    /// <summary>
     ///      '채팅방'의 기본 클래스
     ///      - ID        : 방들의 고유 식별자
     ///      - Name      : 방 이름
@@ -44,12 +24,31 @@ namespace ManaBob
     /// </remarks>
     public class Room
     {
+        /// <summary>
+        ///     식사 메뉴. 필터링에 사용
+        /// </summary>
+        public enum MenuCode
+        {
+            Unknown = 0,    // Default value
+            Kor,
+        }
+
+        /// <summary>
+        ///     현재 방(Room)의 상태
+        /// </summary>
+        public enum StatusCode
+        {
+            Open = 0,
+            Full,
+            Closed
+        }
+
         public Int64        ID        { get; set; }
         public String       Name      { get; set; }
-        public Status       Status    { get; set; }
+        public StatusCode   Status    { get; set; }
         public UInt32       Size      { get; set; }
         public UInt32       Capacity  { get; set; }
-        public Menu         Menu      { get; set; }
+        public MenuCode     Menu      { get; set; }
         public Decimal      Budget    { get; set; }
         public List<User>   Users     { get; set; }
     }

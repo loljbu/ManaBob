@@ -34,7 +34,7 @@ namespace ManaBob.UWP.Pages
                 this.Frame.GoBack();
             }
 
-            this.Frame.Navigate(typeof(ChatRoom));
+            //this.Frame.Navigate(typeof(ChatRoom));
         }
 
         private void RoomList1_Tapped(object sender, TappedRoutedEventArgs e)
@@ -44,7 +44,7 @@ namespace ManaBob.UWP.Pages
                 this.Frame.GoBack();
             }
 
-            this.Frame.Navigate(typeof(ChatRoom));
+            //this.Frame.Navigate(typeof(ChatRoom));
         }
 
         private void changeButton_Tapped(object sender, TappedRoutedEventArgs e)
@@ -54,7 +54,7 @@ namespace ManaBob.UWP.Pages
                 this.Frame.GoBack();
             }
 
-            this.Frame.Navigate(typeof(CreateRoom));
+            //this.Frame.Navigate(typeof(CreateRoom));
         }
     }
 }

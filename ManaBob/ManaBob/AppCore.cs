@@ -16,7 +16,7 @@ namespace ManaBob
             Xamarin.Forms.Application
     {
         Repository services   = new Repository();
-        Repo<Page> pages = new Repo<Page>();
+        Repo<NavigationPage> pages = new Repo<NavigationPage>();
         //Repository pages = new Repository();
 
         Navigator navi;
@@ -43,12 +43,11 @@ namespace ManaBob
 
             navi = new Navigator(this);
 
-            var intro = new CreateRoom(navi, pages);
-            pages.Register<CreateRoom>(intro);
-
+            var intro = new NavigationPage(new Intro(navi, pages));
+            pages.Register<Intro>(intro);
 
             // Mandatory for Framework's initialization
-            this.MainPage = new NavigationPage(intro);
+            this.MainPage = intro;
         }
 
         protected override void OnStart()

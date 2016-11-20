@@ -15,9 +15,9 @@ namespace ManaBob.Pages
         {
             return new List<Message>
             {
-                new Message("Sender1", Format.ToJson("JSON Text1")),
-                new Message("Sender2", "Text2"),
-                new Message("Sender3", "Text3"),
+                new Message(1111, 8888, Format.ToJson("JSON Text1")),
+                new Message(2222, 8888, Format.ToJson("JSON Text2")),
+                new Message(3333, 8888, Format.ToJson("JSON Text3")),
             };
         }
     }
@@ -25,9 +25,10 @@ namespace ManaBob.Pages
 	public partial class ChatRoom : ContentPage
 	{
         Navigator navi;
-        Repository pages;
+        Repo<NavigationPage> pages;
 
-        public ChatRoom (Navigator _navi, Repository _pages)
+
+        public ChatRoom (Navigator _navi, Repo<NavigationPage> _pages)
 		{
             navi = _navi;
             pages = _pages;

@@ -13,11 +13,12 @@ using ManaBob.Services;
 namespace ManaBob.UWP.Services
 {
 
+    /// <summary>
+    ///     `INetService` Implementation for Universal Windows Platform
+    /// </summary>
+    /// <seealso cref="ManaBob.Services.INetService"/>
     public class UWPNetService : INetService
     {
-        //static IPAddress serviceAddr = IPAddress.IPv6Loopback;
-        //static int servicePort = 31357;
-
         Socket sock = new Socket(AddressFamily.InterNetworkV6, SocketType.Stream, ProtocolType.Tcp);
 
         /// <summary>
@@ -29,7 +30,7 @@ namespace ManaBob.UWP.Services
         }
 
         /// <summary>
-        ///     Send some bytes to server.
+        ///     Send some bytes asynchronously to server.
         /// </summary>
         private Task SendBytes(Byte[] _buffer)
         {
@@ -43,7 +44,7 @@ namespace ManaBob.UWP.Services
         ///     Send Message to Server
         /// </summary>
         /// <seealso cref="Message"/>
-        public Task Send(Message _message)
+        Task INetService.Send(Message _message)
         {
             var msg_json = Format.ToJson(_message);
             Byte[] buffer = Encoding.UTF8.GetBytes(msg_json);
@@ -56,7 +57,7 @@ namespace ManaBob.UWP.Services
         /// </summary>
         /// <seealso cref="ManaBob.Request"/>
         /// <seealso cref="ManaBob.Response"/>
-        public Task<Response> Request(Request _req)
+        Task<Response> INetService.Request(Request _req)
         {
             var req_json = Format.ToJson(_req);
             Byte[] buffer = Encoding.UTF8.GetBytes(req_json);
@@ -74,7 +75,7 @@ namespace ManaBob.UWP.Services
         /// <summary>
         ///     Check if the socket is connected
         /// </summary>
-        public bool IsConnected
+        bool INetService.IsConnected
         {
             get
             {
@@ -85,7 +86,7 @@ namespace ManaBob.UWP.Services
         /// <summary>
         ///     Dispose the inner resources
         /// </summary>
-        public void Dispose()
+        void IDisposable.Dispose()
         {
             sock.Dispose();
         }

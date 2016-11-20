@@ -11,8 +11,9 @@ namespace ManaBob.Pages
     public partial class CreateRoom : ContentPage
     {
         Navigator navi;
-        Repository pages;
-        public CreateRoom(Navigator _navi, Repository _pages)
+        Repo<NavigationPage> pages;
+
+        public CreateRoom(Navigator _navi, Repo<NavigationPage> _pages)
         {
             navi = _navi;
             pages = _pages;

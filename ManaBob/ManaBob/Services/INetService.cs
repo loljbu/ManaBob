@@ -10,7 +10,14 @@ namespace ManaBob.Services
 
     public interface INetService : IDisposable
     {
+        /// <summary>
+        ///     Send a message to Server. No response
+        /// </summary>
         Task            Send(Message _message);
+
+        /// <summary>
+        ///     Send a request to Server. Receive a response about it.
+        /// </summary>
         Task<Response>  Request(Request _req);
 
         /// <summary>

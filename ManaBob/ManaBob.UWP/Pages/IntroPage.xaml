@@ -15,7 +15,7 @@
 
 
 
-        <!--<StackPanel Grid.Row="0" Background="Gray"/>-->
+        <!--<StackPanel Grid.Row="0" Background="Gray"/>--><!--
         <Image Grid.Row="0" Width="100" Height="100"
                Source="test.png"/>
 
@@ -30,13 +30,14 @@
 
         <StackPanel     Grid.Row="1" 
                         Orientation="Vertical">
+            
             <Button     x:Name="confirmButton"  
                         HorizontalAlignment="Center" 
                         Height="60" Width="120"  
                         Margin="10"
                         >
                 <Button.Background>
-                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/IntroPage_confirm.png"/>
+                    <ImageBrush Stretch="Fill" ImageSource="Images/IntroPage_confirm.png"/>
                 </Button.Background>
             </Button>
             <Button     x:Name="loginButton" 
@@ -44,10 +45,10 @@
                         Height="60" Width="120"   
                         Margin="10" Tapped="loginButton_Tapped" >
                 <Button.Background>
-                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/IntroPage_login.png"/>
+                    <ImageBrush Stretch="Fill" ImageSource="Images/IntroPage_login.png"/>
                 </Button.Background>
             </Button>
-        </StackPanel>
+        </StackPanel>-->
 
     </Grid>
 </Page>

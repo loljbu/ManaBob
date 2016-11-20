@@ -32,10 +32,10 @@ namespace ManaBob.UWP
 
             //var netSvc      = new Services.UWPNetService(serverEp);
             //var netSvc      = new ManaBob.Services.();
-            var localSvc    = new ManaBob.Services.FakeLocal();
-            var authSvc     = new ManaBob.Services.FakeAuth();
+            //var localSvc    = new ManaBob.Services.FakeLocal();
+            //var authSvc     = new ManaBob.Services.FakeAuth();
 
-            var Core = new ManaBob.AppCore(netSvc, localSvc, authSvc);
+            var Core = new ManaBob.AppCore();
             LoadApplication(Core);
         }
         
