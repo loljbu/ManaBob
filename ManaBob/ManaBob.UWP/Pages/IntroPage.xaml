@@ -30,20 +30,21 @@
 
         <StackPanel     Grid.Row="1" 
                         Orientation="Vertical">
-            <Button     x:Name="confirmButton" 
-                        Content="인증하기" 
+            <Button     x:Name="confirmButton"  
                         HorizontalAlignment="Center" 
                         Height="60" Width="120"  
                         Margin="10"
-                        />
-            <Button     x:Name="loginButton" 
-                        Content="로그인" 
-                        HorizontalAlignment="Center" 
-                        Height="60" Width="120"   
-                        Margin="10"
                         >
                 <Button.Background>
-                    <ImageBrush Stretch="Fill"/>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/IntroPage_confirm.png"/>
+                </Button.Background>
+            </Button>
+            <Button     x:Name="loginButton" 
+                        HorizontalAlignment="Center" 
+                        Height="60" Width="120"   
+                        Margin="10" Tapped="loginButton_Tapped" >
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/IntroPage_login.png"/>
                 </Button.Background>
             </Button>
         </StackPanel>
