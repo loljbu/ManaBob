@@ -28,7 +28,7 @@ namespace ManaBob
 
         public static String ToJson<T>(T _object)
         {
-            var result = JsonConvert.SerializeObject(_object);
+            var result = JsonConvert.SerializeObject(_object, Formatting.Indented);
             return result;
         }
 

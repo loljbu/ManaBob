@@ -33,6 +33,11 @@ namespace ManaBob
         /// <seealso cref="Room"/>
         public Int64    To      { get; set; }
 
+        /// <summary>
+        ///     Message's unique ID in the room
+        /// </summary>
+        public UInt32 ID { get; set; }
+
         /// <seealso cref="Message.Format"/>
         public Format   Type    { get; set; }
 
@@ -42,10 +47,13 @@ namespace ManaBob
         public Byte[]   Bytes { get; set; }
 
 
+        public Message() { }
+
         public Message(Int64 _from, Int64 _to, String _text)
         {
             From = _from;
             To = _to;
+            Type = Format.Text;
             Bytes = Encoding.UTF8.GetBytes(_text);
         }
 
@@ -53,6 +61,7 @@ namespace ManaBob
         {
             From = _from;
             To = _to;
+            Type = Format.Binary;
             Bytes = _bytes;
         }
 

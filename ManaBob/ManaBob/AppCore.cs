@@ -16,25 +16,26 @@ namespace ManaBob
             Xamarin.Forms.Application
     {
         Repository services   = new Repository();
-        //Repo<Page> pages      = new Repo<Page>();
-        Repository pages = new Repository();
+        Repo<Page> pages = new Repo<Page>();
+        //Repository pages = new Repository();
 
         Navigator navi;
 
-        public AppCore(INetService _net, ILocalService _local, IAuthService _auth)
+        //INetService _net, ILocalService _local, IAuthService _auth
+        public AppCore()
         {
             // Argument check
-            if(_net == null || _local == null || _auth == null)
-            {
-                throw new ArgumentNullException("AppCore initialization failed");
-            }
+            //if(_net == null || _local == null || _auth == null)
+            //{
+            //    throw new ArgumentNullException("AppCore initialization failed");
+            //}
 
             // Net/Local services
             // ---- ---- ---- ---- ----
 
-            services.Register<INetService>(_net);
-            services.Register<ILocalService>(_local);
-            services.Register<IAuthService>(_auth);
+            //services.Register<INetService>(_net);
+            //services.Register<ILocalService>(_local);
+            //services.Register<IAuthService>(_auth);
 
 
             // Pages / Navigation

@@ -8,19 +8,19 @@ using System.ComponentModel;
 namespace ManaBob
 {
     /// <summary>
-    /// 
+    ///     Data Binding base class
     /// </summary>
-    /// <seealso cref=""/>
-    class Bindable : INotifyPropertyChanged
+    /// <seealso cref="INotifyPropertyChanged"/>
+    /// <seealso cref="PropertyChangedEventHandler"/>
+    public class Bindable : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
         void OnPropertyChanged(string _property = null)
         {
-            var handler = PropertyChanged;
-            if(handler != null)
+            if(PropertyChanged != null)
             {
-                handler(this, new PropertyChangedEventArgs(_property));
+                PropertyChanged(this, new PropertyChangedEventArgs(_property));
             }
         }
     }
