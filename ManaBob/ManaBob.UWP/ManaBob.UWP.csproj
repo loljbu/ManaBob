@@ -99,14 +99,15 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ChatRoom.xaml.cs">
-      <DependentUpon>ChatRoom.xaml</DependentUpon>
+    <Compile Include="Pages\IntroPage.xaml.cs">
+      <DependentUpon>IntroPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CreateRoom.xaml.cs">
-      <DependentUpon>CreateRoom.xaml</DependentUpon>
+    <Compile Include="Pages\RoomList.xaml.cs">
+      <DependentUpon>RoomList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FacebookAuth.cs" />
+    <Compile Include="Services\NetService.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -118,16 +119,35 @@
     <Content Include="Images\back.png" />
     <Content Include="Images\chagne.png" />
     <Content Include="Images\createRoom.png" />
+    <Content Include="Images\CreateRoom_cata.PNG" />
+    <Content Include="Images\CreateRoom_ex.png" />
+    <Content Include="Images\CreateRoom_number.PNG" />
+    <Content Include="Images\CreateRoom_red.PNG" />
+    <Content Include="Images\CreateRoom_time.PNG" />
+    <Content Include="Images\CreateRoom_title.PNG" />
     <Content Include="Images\dish.png" />
+    <Content Include="Images\error.png" />
     <Content Include="Images\exit.png" />
+    <Content Include="Images\greenLight.png" />
+    <Content Include="Images\IntroPage_confirm.png" />
+    <Content Include="Images\IntroPage_login.png" />
+    <Content Include="Images\LockScreenLogo.scale-200.png" />
     <Content Include="Images\login.png" />
     <Content Include="Images\logout.png" />
     <Content Include="Images\main.jpg" />
+    <Content Include="Images\main.png" />
     <Content Include="Images\make.png" />
+    <Content Include="Images\plus.png" />
+    <Content Include="Images\redLight.png" />
+    <Content Include="Images\RoomList_menu.PNG" />
+    <Content Include="Images\RoomList_number.PNG" />
+    <Content Include="Images\RoomList_time.PNG" />
+    <Content Include="Images\RoomList_title.PNG" />
     <Content Include="Images\search.png" />
     <Content Include="Images\send.png" />
+    <Content Include="Images\title.PNG" />
+    <Content Include="Images\user.png" />
     <Content Include="Properties\Default.rd.xml" />
-    <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.scale-200.png" />
@@ -144,13 +164,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\ChatRoom.xaml">
+    <Page Include="Pages\IntroPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\CreateRoom.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Pages\RoomList.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
