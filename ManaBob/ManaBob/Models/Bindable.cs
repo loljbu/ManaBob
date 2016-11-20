@@ -11,7 +11,7 @@ namespace ManaBob
     /// 
     /// </summary>
     /// <seealso cref=""/>
-    public class Bindable : INotifyPropertyChanged
+    class Bindable : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

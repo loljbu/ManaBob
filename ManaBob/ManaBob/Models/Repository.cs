@@ -7,6 +7,47 @@ using System.Threading.Tasks;
 namespace ManaBob
 {
 
+    public class Repo<T>
+    {
+        Dictionary<int, T> dict = new Dictionary<int, T>();
+
+
+        T Resolve(String _key)
+        {
+            var key     = _key.GetHashCode();
+            T   result  = default(T);
+
+            dict.TryGetValue(key, out result);   
+            return result;
+        }
+
+        void Register(String _key, T _value)
+        {
+            if(_key == null || _key.Length == 0 || _value == null){
+                return;
+            }
+
+            var key = _key.GetHashCode();
+            dict.Add(key, _value);
+        }
+
+        public void Release(String _key)
+        {
+            var key     = _key.GetHashCode();
+            dict.Remove(key);
+        }
+
+        public Boolean Contains(String _key)
+        {
+            return dict.ContainsKey(_key.GetHashCode());
+        }
+
+        public void Clear()
+        {
+            dict.Clear();
+        }
+    }
+
     public class Repository
     {
         Dictionary<int, Object> dict = null;

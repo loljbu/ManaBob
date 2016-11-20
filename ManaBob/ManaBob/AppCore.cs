@@ -9,12 +9,14 @@ using ManaBob.Services;
 using ManaBob.ViewModel;
 using ManaBob.Pages;
 
+
 namespace ManaBob
 {
     public class AppCore : 
             Xamarin.Forms.Application
     {
         Repository services   = new Repository();
+        //Repo<Page> pages      = new Repo<Page>();
         Repository pages = new Repository();
 
         Navigator navi;
