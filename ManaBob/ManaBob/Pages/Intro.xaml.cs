@@ -10,10 +10,10 @@ namespace ManaBob.Pages
 {
     public partial class Intro : ContentPage
     {
-        Navigator navi;
-        Repository pages;
+        Navigator               navi;
+        Repo<NavigationPage>    pages;
 
-        public Intro(Navigator _navi, Repository _pages)
+        public Intro(Navigator _navi, Repo<NavigationPage> _pages)
         {
             navi = _navi;
             pages = _pages;

@@ -26,5 +26,16 @@ namespace ManaBob.UWP.Pages
         {
             this.InitializeComponent();
         }
+
+        private void loginButton_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+            }
+
+            this.Frame.Navigate(typeof(RoomList));
+        }
+        // facebook 인증 버튼에 대한 이벤트 추가
     }
 }

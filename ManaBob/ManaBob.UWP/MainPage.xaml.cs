@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Xamarin.Forms;
 
+using System.Net;
+
 using ManaBob.Services;
 
 namespace ManaBob.UWP
@@ -24,11 +26,16 @@ namespace ManaBob.UWP
         public MainPage()
         {
             this.InitializeComponent();
-            var netSvc      = new ManaBob.Services.FakeNet();
-            var localSvc    = new ManaBob.Services.FakeLocal();
-            var authSvc     = new ManaBob.Services.FakeAuth();
+            IPAddress   serviceAddr = IPAddress.IPv6Loopback;
+            int         servicePort = 31357;
+            IPEndPoint  serverEp = new IPEndPoint(serviceAddr, servicePort);
 
-            var Core = new ManaBob.AppCore(netSvc, localSvc, authSvc);
+            //var netSvc      = new Services.UWPNetService(serverEp);
+            //var netSvc      = new ManaBob.Services.();
+            //var localSvc    = new ManaBob.Services.FakeLocal();
+            //var authSvc     = new ManaBob.Services.FakeAuth();
+
+            var Core = new ManaBob.AppCore();
             LoadApplication(Core);
         }
         

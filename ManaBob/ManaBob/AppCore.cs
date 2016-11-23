@@ -9,30 +9,33 @@ using ManaBob.Services;
 using ManaBob.ViewModel;
 using ManaBob.Pages;
 
+
 namespace ManaBob
 {
     public class AppCore : 
             Xamarin.Forms.Application
     {
         Repository services   = new Repository();
-        Repository pages = new Repository();
+        Repo<NavigationPage> pages = new Repo<NavigationPage>();
+        //Repository pages = new Repository();
 
         Navigator navi;
 
-        public AppCore(INetService _net, ILocalService _local, IAuthService _auth)
+        //INetService _net, ILocalService _local, IAuthService _auth
+        public AppCore()
         {
             // Argument check
-            if(_net == null || _local == null || _auth == null)
-            {
-                throw new ArgumentNullException("AppCore initialization failed");
-            }
+            //if(_net == null || _local == null || _auth == null)
+            //{
+            //    throw new ArgumentNullException("AppCore initialization failed");
+            //}
 
             // Net/Local services
             // ---- ---- ---- ---- ----
 
-            services.Register<INetService>(_net);
-            services.Register<ILocalService>(_local);
-            services.Register<IAuthService>(_auth);
+            //services.Register<INetService>(_net);
+            //services.Register<ILocalService>(_local);
+            //services.Register<IAuthService>(_auth);
 
 
             // Pages / Navigation
@@ -40,12 +43,11 @@ namespace ManaBob
 
             navi = new Navigator(this);
 
-            var intro = new CreateRoom(navi, pages);
-            pages.Register<CreateRoom>(intro);
-
+            var intro = new NavigationPage(new Intro(navi, pages));
+            pages.Register<Intro>(intro);
 
             // Mandatory for Framework's initialization
-            this.MainPage = new NavigationPage(intro);
+            this.MainPage = intro;
         }
 
         protected override void OnStart()
